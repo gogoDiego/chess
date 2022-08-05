@@ -452,8 +452,9 @@ function blackPawnGameLogic (p1,p2){
 
 let possibleMoves = [];
 
-
-
+let pieceInfront = p1.index[0] +++ 1;
+let pieceInfrontleft = p1.index[1] - 1;
+let pieceInfrontright = p1.index[1] +++ 1;
 
 
 
@@ -483,13 +484,13 @@ if (p1.moved === false ){
 
 } else {
 
+  
 
 
 
+if ( board[(pieceInfront)][(p1.index[1])].space === "empty" ) {
 
-if ( board[(p1.index[0] +++ 1)][(p1.index[1])].space === "empty" ) {
-
-possibleMoves.push( board[(p1.index[0] +++ 1)][(p1.index[1])].index)
+possibleMoves.push( board[(pieceInfront)][(p1.index[1])].index)
 
 } else {
 
@@ -499,28 +500,45 @@ possibleMoves.push( board[(p1.index[0] +++ 1)][(p1.index[1])].index)
    //if theres a piece infront right add it to array
 
 
+
+
+
+
+
+// if (pieceInfrontright = 8 ){
+
+  //right infront
+  if (board[(pieceInfront)][(pieceInfrontright)].space = "filled" & board[pieceInfront][(pieceInfrontright)].color != "white"){
+
+    possibleMoves.push(board[(pieceInfront)][(pieceInfrontright)].index)
+ 
+ }
+}
+
+if (pieceInfrontright = 8 ){
+
    //left infront
 
-  console.log(board[(p1.index[0] +++ 1)][(p1.index[1] - 1)])
+   if (board[(pieceInfront)][(pieceInfrontleft)].space = "filled" & board[(pieceInfront)][(pieceInfrontleft)].color != "white"){
 
-
-    if (board[(p1.index[0] +++ 1)][(p1.index[1] - 1)].space != "empty" & board[(p1.index[0] +++ 1)][(p1.index[1] - 1)].color != "black"){
-
-  possibleMoves.push(board[(p1.index[0] +++ 1)][(p1.index[1] - 1)].index)
-
-
+    possibleMoves.push(board[(pieceInfront)][(pieceInfrontleft)].index)
+  
+  }
 }
 
 
 
-   //right infront
-if (board[(p1.index[0] +++ 1)][(p1.index[1] +++ 1)].space != "empty" & board[(p1.index[0] +++ 1)][(p1.index[1] +++ 1)].color != "black"){
 
-   possibleMoves.push(board[(p1.index[0] +++ 1)][(p1.index[1] +++ 1)].index)
 
+
+
+
+
+  
+ }
 }
-}
-}
+
+
 
 let valid = findValidity(possibleMoves,p2);
 
@@ -677,6 +695,7 @@ function blackRookValidity (p1,p2){
 
 
 function movePiece (player,position1,position2){
+
 
 //which piece and where you want to move?
 let p1IN = chessPositionToIndexNotation(position1)
