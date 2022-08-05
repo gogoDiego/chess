@@ -448,7 +448,7 @@ return valid
 
 
 //logic functions for the BLACK Pawn
-function blackPawnGameLogic (p1,p2){
+function blackPawnGameLogic (p1,p2) {
 
 let possibleMoves = [];
 
@@ -515,6 +515,7 @@ possibleMoves.push( board[(pieceInfront)][(p1.index[1])].index)
  }
 }
 
+
 if (pieceInfrontright = 8 ){
 
    //left infront
@@ -536,13 +537,13 @@ if (pieceInfrontright = 8 ){
 
   
  }
-}
+
 
 
 
 let valid = findValidity(possibleMoves,p2);
 
-return valid
+return valid;
 
 }
 
