@@ -86,11 +86,11 @@ let board = [
     
     [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
     
-    [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wS,moved:false,index:"31",color:white,space:"empty"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:wS,moved:false,index:"33",color:white,space:"empty"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wS,moved:false,index:"35",color:white,space:"empty"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
+    [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wPawn1,moved:true,index:"31",color:white,space:"filled"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:bR,moved:false,index:"33",color:black,space:"filled"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wPawn1,moved:true,index:"35",color:white,space:"filled"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
     
     [a4={piece:wS,moved:false,index:"40",color:white,space:"empty"},b4={piece:bS,moved:false,index:"41",color:black,space:"empty"},c4={piece:wS,moved:false,index:"42",color:white,space:"empty"},d4={piece:bS,moved:false,index:"43",color:black,space:"empty"},e4={piece:wS,moved:false,index:"44",color:white,space:"empty"},f4={piece:bS,moved:false,index:"45",color:black,space:"empty"},g4={piece:wS,moved:false,index:"46",color:white,space:"empty"},h4={piece:bS,moved:false,index:"47",color:black,space:"empty"}],
     
-    [a3={piece:bS,moved:false,index:"50",color:black,space:"empty"},b3={piece:wS,moved:false,index:"51",color:white,space:"empty"},c3={piece:bS,moved:false,index:"52",color:black,space:"empty"},d3={piece:wS,moved:false,index:"53",color:white,space:"empty"},e3={piece:bPawn2,moved:true,index:"54",color:black,space:"filled"},f3={piece:wS,moved:false,index:"55",color:white,space:"empty"},g3={piece:bS,moved:false,index:"56",color:black,space:"empty"},h3={piece:wS,moved:false,index:"57",color:white,space:"empty"}],
+    [a3={piece:bS,moved:false,index:"50",color:black,space:"empty"},b3={piece:wS,moved:false,index:"51",color:white,space:"empty"},c3={piece:bS,moved:false,index:"52",color:black,space:"empty"},d3={piece:wS,moved:false,index:"53",color:white,space:"empty"},e3={piece:bS,moved:false,index:"54",color:black,space:"empty"},f3={piece:wS,moved:false,index:"55",color:white,space:"empty"},g3={piece:bS,moved:false,index:"56",color:black,space:"empty"},h3={piece:wS,moved:false,index:"57",color:white,space:"empty"}],
     
     [a2={piece:wPawn1,moved:false,index:"60",color:white,space:"filled"},b2={piece:wPawn2,moved:false,index:"61",color:white,space:"filled"},c2={piece:wPawn3,moved:false,index:"62",color:white,space:"filled"},d2={piece:wPawn4,moved:false,index:"63",color:white,space:"filled"},e2={piece:wPawn5,moved:false,index:"64",color:white,space:"filled"},f2={piece:wPawn6,moved:false,index:"65",color:white,space:"filled"},g2={piece:wPawn7,moved:false,index:"66",color:white,space:"filled"},h2={piece:wPawn8,moved:false,index:"67",color:white,space:"filled"}],
     
@@ -344,7 +344,7 @@ function blackPieceLogicSwitch (p1,p2){
         answer = [blackPawnGameLogic(p1,p2)];
         break;
       case "♜": 
-        answer = [blackRookValidity(p1,p2)];
+        answer = [blackRookGameLogic(p1,p2)];
         break;
       case "♞": 
         answer = "INSERT Knight LOGIC FUNCTION";
@@ -393,7 +393,7 @@ function blackPieceLogicSwitch (p1,p2){
 
 
 
-//logic functions for the WHITE Pawn
+//logic functions for the WHITE Pawn (*still needs promotion logic)
 function whitePawnGameLogic (p1,p2){
 
     let possibleMoves = [];
@@ -402,15 +402,20 @@ function whitePawnGameLogic (p1,p2){
     let pieceInfrontleft = p1.index[1] - 1;
     let pieceInfrontright = p1.index[1] +++ 1;
     
-    
+   
     
     //2 options
       //if statement hasnt moved then can go forward 1 or 2 square(and if empty space)
       // else statement moved then only 1 forward, or if one is infront and to left/right, then attack
     
+
+
     if (p1.moved === false ){
+
+
+        console.log()
     
-        for (let pawnforloopCounter = (p1.index[0] - 1); pawnforloopCounter < 4 ; pawnforloopCounter--){
+        for (let pawnforloopCounter = (p1.index[0] - 1); pawnforloopCounter > 3 ; pawnforloopCounter--){
     
             if (board[pawnforloopCounter][(p1.index[1])].space === "empty" ){
       
@@ -470,17 +475,7 @@ function whitePawnGameLogic (p1,p2){
  
 }
 
-
-
-
-
-
-
-
-
-
-
-//logic functions for the BLACK Pawn
+//logic functions for the BLACK Pawn (*still needs promotion logic)
 function blackPawnGameLogic (p1,p2) {
 
 let possibleMoves = [];
@@ -536,8 +531,6 @@ possibleMoves.push( board[(pieceInfront)][(p1.index[1])].index)
 
 }
 
-
-
 if (pieceInfrontleft !== -1 ){
 
    //left infront
@@ -557,16 +550,7 @@ return valid;
 }
 
 
-
-
-
-
-
-
-
-
-
-
+//logic function for white rook
 function whiteRookGameLogic(p1,p2){
 
   let possibleMoves = [];
@@ -583,7 +567,7 @@ function whiteRookGameLogic(p1,p2){
 
   if (board[rookIndex1][(p1.index[1])].color === "black" ){
 
-  possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
 
   }
 
@@ -593,45 +577,52 @@ function whiteRookGameLogic(p1,p2){
 
 }
 
+
+
   //all possible moves backward
-  for (let rookIndex1 = (p1.index[0] +++ 1); rookIndex1 < 8; rookIndex1++){
+  for (let rookIndex2 = (p1.index[0] +++ 1); rookIndex2 < 8; rookIndex2++){
 
-    if (board[rookIndex1][(p1.index[1])].space === "empty" ){
 
-    possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+    if (board[rookIndex2][(p1.index[1])].space === "empty" ){
 
- } else {
+      possibleMoves.push(board[rookIndex2][(p1.index[1])].index);
 
-  if (board[rookIndex1][(p1.index[1])].color === "black" ){
-    possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+      } else {
+
+      if (board[rookIndex2][(p1.index[1])].color === "black" ){
+
+        possibleMoves.push(board[rookIndex2][(p1.index[1])].index);
+        
+      }
+
+      rookIndex2 = 8;
+
+    }
+
   }
-
-  rookIndex1 = 7;
-
- }
-}
-
-
-
 
   //all possible moves right
 
-  for (let rookIndex1 = (p1.index[1] +++ 1); rookIndex1 < 8; rookIndex1++){
+  for (let rookIndex1 = p1.index[1] +++ 1; rookIndex1 < 8; rookIndex1++){
 
-   if (board[p1.index[0]][rookIndex1].space === "empty" ){
+    if (board[p1.index[0]][rookIndex1].space === "empty" ) {
 
-    possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+      possibleMoves.push(board[p1.index[0]][rookIndex1].index);
 
- } else {
+      } else {
 
-  if (board[p1.index[0]][rookIndex1].color === "black" ){
-    possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+      if (board[p1.index[0]][rookIndex1].color === "black" ) {
+
+        possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+      
+        rookIndex1 = 9;
+      }
+
+      
+    
+    }
+    
   }
-
-  rookIndex1 = 7;
-
- }
-}
 
 
   //all possible moves left
@@ -644,6 +635,7 @@ function whiteRookGameLogic(p1,p2){
 
  } else {
 
+
   if (board[p1.index[0]][rookIndex1].color === "black" ){
     possibleMoves.push(board[p1.index[0]][rookIndex1].index);
   }
@@ -655,36 +647,116 @@ function whiteRookGameLogic(p1,p2){
 }
 
 
+let valid = findValidity(possibleMoves,p2);
+return valid
+
+}
+
+
+//logic function for black rook
+function blackRookGameLogic(p1,p2){
+ 
+  let possibleMoves = [];
+
+  //all possible moves forwards
+
+  for (let rookIndex1 = (p1.index[0] - 1); rookIndex1 > 0; rookIndex1--){
+
+    if (board[rookIndex1][(p1.index[1])].space === "empty" ){
+
+    possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+
+ } else {
+
+  if (board[rookIndex1][(p1.index[1])].color === "white" ){
+
+possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+
+  }
+
+  rookIndex1 = 0;
+
+ }
+
+}
+
+
+
+  //all possible moves backward
+  for (let rookIndex2 = (p1.index[0] +++ 1); rookIndex2 < 8; rookIndex2++){
+
+
+    if (board[rookIndex2][(p1.index[1])].space === "empty" ){
+
+      possibleMoves.push(board[rookIndex2][(p1.index[1])].index);
+
+      } else {
+
+      if (board[rookIndex2][(p1.index[1])].color === "white" ){
+
+        possibleMoves.push(board[rookIndex2][(p1.index[1])].index);
+        
+      }
+
+      rookIndex2 = 8;
+
+    }
+
+  }
+
+  //all possible moves right
+
+  for (let rookIndex1 = p1.index[1] +++ 1; rookIndex1 < 8; rookIndex1++){
+
+    if (board[p1.index[0]][rookIndex1].space === "empty" ) {
+
+      possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+
+      } else {
+
+      if (board[p1.index[0]][rookIndex1].color === "white" ) {
+
+        possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+      
+        rookIndex1 = 9;
+      }
+
+      
+    
+    }
+    
+  }
+
+
+  //all possible moves left
+
+  for (let rookIndex1 = (p1.index[1] - 1); rookIndex1 > -1; rookIndex1--){
+
+   if (board[p1.index[0]][rookIndex1].space === "empty" ){
+
+    possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+
+ } else {
+
+
+  if (board[p1.index[0]][rookIndex1].color === "white" ){
+    possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+  }
+
+
+  rookIndex1 = 0;
+
+ }
+}
 
 
 let valid = findValidity(possibleMoves,p2);
-
 return valid
 
-
-
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-function blackRookGameLogic(piece){
- 
-}
-
-function blackRookValidity (p1,p2){
-
-}
 
 
 
@@ -760,6 +832,12 @@ if (player == "white"){
   board[p2IN[0]][p2IN[1]].piece = tempPiece
   bSorwS(position1) 
   p1Object.space = "empty"
+  p2Object.moved = "true"
+  p2Object.space = "filled"
+  p2Object.color = p1Object.color
+
+
+
   }
 
 return displayGame() + "result for that move"
@@ -767,7 +845,13 @@ return displayGame() + "result for that move"
 }
 
 
+//your move
 
-console.log(movePiece("black","c7","a6"))
+
+
+movePiece("black","d5","h5")
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
