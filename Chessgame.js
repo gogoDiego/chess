@@ -28,7 +28,7 @@ let wK = ("♔")
 let wQ = ("♕")
 let wR = ("♖")
 let wB = ("♗")
-let wKn = ("♘")
+let wN = ("♘")
 let wPawn1 = ("♙")
 let wPawn2 = ("♙")
 let wPawn3 = ("♙")
@@ -46,7 +46,7 @@ let bK = ("♚")
 let bQ = ("♛")
 let bR = ("♜")
 let bB = ("♝")
-let bKn = ("♞")
+let bN = ("♞")
 let bPawn1 = ("♟")
 let bPawn2 = ("♟")
 let bPawn3 = ("♟")
@@ -80,22 +80,22 @@ let filled = "filled"
 
 
 let board = [
-    [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bKn,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bK,moved:false,index:"03",color:black,space:"filled"},e8={piece:bQ,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bKn,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
-    
-    [a7={piece:bPawn1,moved:false,index:"10",color:black,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
-    
-    [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
-    
-    [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wPawn1,moved:true,index:"31",color:white,space:"filled"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:bR,moved:false,index:"33",color:black,space:"filled"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wPawn1,moved:true,index:"35",color:white,space:"filled"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
-    
-    [a4={piece:wS,moved:false,index:"40",color:white,space:"empty"},b4={piece:bS,moved:false,index:"41",color:black,space:"empty"},c4={piece:wS,moved:false,index:"42",color:white,space:"empty"},d4={piece:bS,moved:false,index:"43",color:black,space:"empty"},e4={piece:wS,moved:false,index:"44",color:white,space:"empty"},f4={piece:bS,moved:false,index:"45",color:black,space:"empty"},g4={piece:wS,moved:false,index:"46",color:white,space:"empty"},h4={piece:bS,moved:false,index:"47",color:black,space:"empty"}],
-    
-    [a3={piece:bS,moved:false,index:"50",color:black,space:"empty"},b3={piece:wS,moved:false,index:"51",color:white,space:"empty"},c3={piece:bS,moved:false,index:"52",color:black,space:"empty"},d3={piece:wS,moved:false,index:"53",color:white,space:"empty"},e3={piece:bS,moved:false,index:"54",color:black,space:"empty"},f3={piece:wS,moved:false,index:"55",color:white,space:"empty"},g3={piece:bS,moved:false,index:"56",color:black,space:"empty"},h3={piece:wS,moved:false,index:"57",color:white,space:"empty"}],
-    
-    [a2={piece:wPawn1,moved:false,index:"60",color:white,space:"filled"},b2={piece:wPawn2,moved:false,index:"61",color:white,space:"filled"},c2={piece:wPawn3,moved:false,index:"62",color:white,space:"filled"},d2={piece:wPawn4,moved:false,index:"63",color:white,space:"filled"},e2={piece:wPawn5,moved:false,index:"64",color:white,space:"filled"},f2={piece:wPawn6,moved:false,index:"65",color:white,space:"filled"},g2={piece:wPawn7,moved:false,index:"66",color:white,space:"filled"},h2={piece:wPawn8,moved:false,index:"67",color:white,space:"filled"}],
-    
-    [a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wKn,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wK,moved:false,index:"73",color:white,space:"filled"},e1={piece:wQ,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wKn,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
-    ]
+  [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bK,moved:false,index:"03",color:black,space:"filled"},e8={piece:bQ,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
+  
+  [a7={piece:bPawn1,moved:false,index:"10",color:black,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
+  
+  [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
+  
+  [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wS,moved:false,index:"31",color:white,space:"empty"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:wN,moved:true,index:"33",color:white,space:"filled"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wS,moved:false,index:"35",color:white,space:"empty"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
+  
+  [a4={piece:wS,moved:false,index:"40",color:white,space:"empty"},b4={piece:bS,moved:false,index:"41",color:black,space:"empty"},c4={piece:wS,moved:false,index:"42",color:white,space:"empty"},d4={piece:bS,moved:false,index:"43",color:black,space:"empty"},e4={piece:wS,moved:false,index:"44",color:white,space:"empty"},f4={piece:bS,moved:false,index:"45",color:black,space:"empty"},g4={piece:wS,moved:false,index:"46",color:white,space:"empty"},h4={piece:bS,moved:false,index:"47",color:black,space:"empty"}],
+  
+  [a3={piece:bS,moved:false,index:"50",color:black,space:"empty"},b3={piece:wS,moved:false,index:"51",color:white,space:"empty"},c3={piece:bS,moved:false,index:"52",color:black,space:"empty"},d3={piece:wS,moved:false,index:"53",color:white,space:"empty"},e3={piece:bS,moved:false,index:"54",color:black,space:"empty"},f3={piece:wS,moved:false,index:"55",color:white,space:"empty"},g3={piece:bS,moved:false,index:"56",color:black,space:"empty"},h3={piece:wS,moved:false,index:"57",color:white,space:"empty"}],
+  
+  [a2={piece:wPawn1,moved:false,index:"60",color:white,space:"filled"},b2={piece:wPawn2,moved:false,index:"61",color:white,space:"filled"},c2={piece:wPawn3,moved:false,index:"62",color:white,space:"filled"},d2={piece:wPawn4,moved:false,index:"63",color:white,space:"filled"},e2={piece:wPawn5,moved:false,index:"64",color:white,space:"filled"},f2={piece:wPawn6,moved:false,index:"65",color:white,space:"filled"},g2={piece:wPawn7,moved:false,index:"66",color:white,space:"filled"},h2={piece:wPawn8,moved:false,index:"67",color:white,space:"filled"}],
+  
+  [a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wK,moved:false,index:"73",color:white,space:"filled"},e1={piece:wQ,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
+  ]
 
 
 /*
@@ -314,7 +314,7 @@ function whitePieceLogicSwitch (p1,p2){
         answer = [whiteRookGameLogic(p1,p2)];
         break;
       case "♘":  
-        answer = "INSERT Knight LOGIC FUNCTION";
+        answer = [whiteKnightGameLogic(p1,p2)];
         break;
       case "♗":  
         answer = "INSERT Bishop LOGIC FUNCTION";
@@ -347,7 +347,7 @@ function blackPieceLogicSwitch (p1,p2){
         answer = [blackRookGameLogic(p1,p2)];
         break;
       case "♞": 
-        answer = "INSERT Knight LOGIC FUNCTION";
+        answer = [blackKnightGameLogic(p1,p2)];
         break;
       case "♝":
         answer = "INSERT Bishop LOGIC FUNCTION";
@@ -549,8 +549,7 @@ return valid;
 
 }
 
-
-//logic function for white rook
+//logic function for white rook (need castle with king logic)
 function whiteRookGameLogic(p1,p2){
 
   let possibleMoves = [];
@@ -652,8 +651,7 @@ return valid
 
 }
 
-
-//logic function for black rook
+//logic function for black rook (need castle with king logic)
 function blackRookGameLogic(p1,p2){
  
   let possibleMoves = [];
@@ -755,12 +753,363 @@ return valid
 
 }
 
+//logic function for white Knight
+function whiteKnightGameLogic(p1,p2){
 
 
+  let possibleMoves = [];
 
 
+  let pieceInfront = p1.index[0] - 2; //pieceInfront > -1
+  let pieceBehind = p1.index[0] +++ 2; //pieceBehind < 8
+  let pieceInfrontleft = p1.index[1] - 1; //pieceInfrontleft > -1
+  let pieceInfrontright = p1.index[1] +++ 1; //pieceInfrontright < 8
+
+//forward to left
+if (pieceInfrontleft > -1 & pieceInfront > -1){
+if (board[pieceInfront][pieceInfrontleft].space === "filled"){
+
+  if (board[pieceInfront][pieceInfrontleft].color === "black"){
+
+    possibleMoves.push(board[pieceInfront][pieceInfrontleft].index);
+
+  }
 
 
+} else {
+
+  possibleMoves.push(board[pieceInfront][pieceInfrontleft].index);
+
+}
+
+}
+
+//forward to right
+if (pieceInfront > -1 & pieceInfrontright < 8){
+if (board[pieceInfront][pieceInfrontright].space === "filled"){
+
+  if (board[pieceInfront][pieceInfrontright].color === "black"){
+
+    possibleMoves.push(board[pieceInfront][pieceInfrontright].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[pieceInfront][pieceInfrontright].index);
+
+}
+
+}
+
+
+//backward to left(checked)
+if (pieceInfrontleft > -1 & pieceBehind < 8){
+if (board[pieceBehind][pieceInfrontleft].space === "filled"){
+
+  if (board[pieceBehind][pieceInfrontleft].color === "black"){
+
+    possibleMoves.push(board[pieceBehind][pieceInfrontleft].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[pieceBehind][pieceInfrontleft].index);
+
+}
+
+}
+
+//backward to right(checked)
+if(pieceBehind < 8 & pieceInfrontright < 8){
+if (board[pieceBehind][pieceInfrontright].space === "filled"){
+
+  if (board[pieceBehind][pieceInfrontright].color === "black"){
+
+    possibleMoves.push(board[pieceBehind][pieceInfrontright].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[pieceBehind][pieceInfrontright].index);
+
+}
+
+}
+
+let upAttack = p1.index[0] - 1; // upAttack > -1
+let downAttack = p1.index[0] +++ 1; //downAttack < 8
+let leftSide = p1.index[1] - 2; //leftSide > -1
+let rightSide = p1.index[1] +++ 2; //rightSide < 8
+
+//leftside upattack 
+if (upAttack > -1 & leftSide > -1){
+
+if (board[upAttack][leftSide].space === "filled"){
+
+  if (board[upAttack][leftSide].color === "black"){
+
+    possibleMoves.push(board[upAttack][leftSide].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[upAttack][leftSide].index);
+
+}
+
+}
+
+//rightside upattack
+if (rightSide < 8 & upAttack > -1){
+
+if (board[upAttack][rightSide].space === "filled"){
+
+  if (board[upAttack][rightSide].color === "black"){
+
+    possibleMoves.push(board[upAttack][rightSide].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[upAttack][rightSide].index);
+
+}
+
+}
+
+//leftside downattack
+if (leftSide > -1 & downAttack < 8 ){
+
+if (board[downAttack][leftSide].space === "filled"){
+
+  if (board[downAttack][leftSide].color === "black"){
+
+    possibleMoves.push(board[downAttack][leftSide].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[downAttack][leftSide].index);
+
+}
+
+}
+
+//rightside downattack
+if (downAttack < 8 & rightSide < 8){
+
+if (board[downAttack][rightSide].space === "filled"){
+
+  if (board[downAttack][rightSide].color === "black"){
+
+    possibleMoves.push(board[downAttack][rightSide].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[downAttack][rightSide].index);
+
+}
+
+}
+
+  let valid = findValidity(possibleMoves,p2);
+  return valid
+
+}
+
+//logic function for black Knight
+function blackKnightGameLogic(p1,p2){
+
+  let possibleMoves = [];
+
+
+  let pieceInfront = p1.index[0] - 2; //pieceInfront > -1
+  let pieceBehind = p1.index[0] +++ 2; //pieceBehind < 8
+  let pieceInfrontleft = p1.index[1] - 1; //pieceInfrontleft > -1
+  let pieceInfrontright = p1.index[1] +++ 1; //pieceInfrontright < 8
+
+//forward to left
+if (pieceInfrontleft > -1 & pieceInfront > -1){
+if (board[pieceInfront][pieceInfrontleft].space === "filled"){
+
+  if (board[pieceInfront][pieceInfrontleft].color === "white"){
+
+    possibleMoves.push(board[pieceInfront][pieceInfrontleft].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[pieceInfront][pieceInfrontleft].index);
+
+}
+
+}
+
+//forward to right
+if (pieceInfront > -1 & pieceInfrontright < 8){
+if (board[pieceInfront][pieceInfrontright].space === "filled"){
+
+  if (board[pieceInfront][pieceInfrontright].color === "white"){
+
+    possibleMoves.push(board[pieceInfront][pieceInfrontright].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[pieceInfront][pieceInfrontright].index);
+
+}
+
+}
+
+
+//backward to left
+if (pieceInfrontleft > -1 & pieceBehind < 8){
+if (board[pieceBehind][pieceInfrontleft].space === "filled"){
+
+  if (board[pieceBehind][pieceInfrontleft].color === "white"){
+
+    possibleMoves.push(board[pieceBehind][pieceInfrontleft].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[pieceBehind][pieceInfrontleft].index);
+
+}
+
+}
+
+//backward to right
+if(pieceBehind < 8 & pieceInfrontright < 8){
+if (board[pieceBehind][pieceInfrontright].space === "filled"){
+
+  if (board[pieceBehind][pieceInfrontright].color === "white"){
+
+    possibleMoves.push(board[pieceBehind][pieceInfrontright].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[pieceBehind][pieceInfrontright].index);
+
+}
+
+}
+
+let upAttack = p1.index[0] - 1; // upAttack > -1
+let downAttack = p1.index[0] +++ 1; //downAttack < 8
+let leftSide = p1.index[1] - 2; //leftSide > -1
+let rightSide = p1.index[1] +++ 2; //rightSide < 8
+
+//leftside upattack
+if (upAttack > -1 & leftSide > -1){
+
+if (board[upAttack][leftSide].space === "filled"){
+
+  if (board[upAttack][leftSide].color === "white"){
+
+    possibleMoves.push(board[upAttack][leftSide].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[upAttack][leftSide].index);
+
+}
+
+}
+
+//rightside upattack
+if (rightSide < 8 & upAttack > -1){
+
+if (board[upAttack][rightSide].space === "filled"){
+
+  if (board[upAttack][rightSide].color === "white"){
+
+    possibleMoves.push(board[upAttack][rightSide].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[upAttack][rightSide].index);
+
+}
+
+}
+
+//leftside downattack
+if (leftSide > -1 & downAttack < 8 ){
+
+if (board[downAttack][leftSide].space === "filled"){
+
+  if (board[downAttack][leftSide].color === "white"){
+
+    possibleMoves.push(board[downAttack][leftSide].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[downAttack][leftSide].index);
+
+}
+
+}
+
+//rightside downattack
+if (downAttack < 8 & rightSide < 8){
+
+if (board[downAttack][rightSide].space === "filled"){
+
+  if (board[downAttack][rightSide].color === "white"){
+
+    possibleMoves.push(board[downAttack][rightSide].index);
+
+  }
+
+
+} else {
+
+  possibleMoves.push(board[downAttack][rightSide].index);
+
+}
+
+}
+
+  let valid = findValidity(possibleMoves,p2);
+  return valid
+
+
+}
 
 
 
@@ -849,7 +1198,7 @@ return displayGame() + "result for that move"
 
 
 
-movePiece("black","d5","h5")
+movePiece("black","b8","d2")
 
 
 
