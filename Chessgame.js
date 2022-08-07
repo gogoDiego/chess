@@ -80,13 +80,13 @@ let filled = "filled"
 
 
 let board = [
-  [a8={piece:wK,moved:true,index:"00",color:white,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:wK,moved:true,index:"07",color:white,space:"filled"}],
+  [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
   
   [a7={piece:bPawn1,moved:false,index:"10",color:black,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
   
   [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
   
-  [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wS,moved:false,index:"31",color:white,space:"empty"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:bK,moved:true,index:"33",color:black,space:"filled"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wS,moved:false,index:"35",color:white,space:"empty"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
+  [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wS,moved:false,index:"31",color:white,space:"empty"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:wS,moved:false,index:"33",color:white,space:"empty"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wS,moved:false,index:"35",color:white,space:"empty"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
   
   [a4={piece:wS,moved:false,index:"40",color:white,space:"empty"},b4={piece:bS,moved:false,index:"41",color:black,space:"empty"},c4={piece:wS,moved:false,index:"42",color:white,space:"empty"},d4={piece:bS,moved:false,index:"43",color:black,space:"empty"},e4={piece:wS,moved:false,index:"44",color:white,space:"empty"},f4={piece:bS,moved:false,index:"45",color:black,space:"empty"},g4={piece:wS,moved:false,index:"46",color:white,space:"empty"},h4={piece:bS,moved:false,index:"47",color:black,space:"empty"}],
   
@@ -94,7 +94,7 @@ let board = [
   
   [a2={piece:wPawn1,moved:false,index:"60",color:white,space:"filled"},b2={piece:wPawn2,moved:false,index:"61",color:white,space:"filled"},c2={piece:wPawn3,moved:false,index:"62",color:white,space:"filled"},d2={piece:wPawn4,moved:false,index:"63",color:white,space:"filled"},e2={piece:wPawn5,moved:false,index:"64",color:white,space:"filled"},f2={piece:wPawn6,moved:false,index:"65",color:white,space:"filled"},g2={piece:wPawn7,moved:false,index:"66",color:white,space:"filled"},h2={piece:wPawn8,moved:false,index:"67",color:white,space:"filled"}],
   
-  [a1={piece:wK,moved:true,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wQ,moved:false,index:"73",color:white,space:"filled"},e1={piece:wK,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wK,moved:true,index:"77",color:white,space:"filled"}]
+  [a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wQ,moved:false,index:"73",color:white,space:"filled"},e1={piece:wK,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
   ]
 
 
@@ -378,8 +378,8 @@ function blackPieceLogicSwitch (p1,p2){
                                                                    |___/        
                                                        .::.
                                             _()_       _::_
-                                  _O      _/____\_   _/____\_
-           _  _  _     ^^__      / //\    \      /   \      /
+                                  _O_     _/____\_   _/____\_
+           _  _  _     ^^__      ////\    \      /   \      /
           | || || |   /  - \_   {     }    \____/     \____/
           |_______| <|    __<    \___/     (____)     (____)
     _     \__ ___ / <|    \      (___)      |  |       |  |
@@ -2081,9 +2081,26 @@ return valid
 
 
 
+//To Do List
+  //-fix pawn attack logic(can attack diagonaly even if piece isnt infront)
+  //-Make Pawn Promotion logic
+  //-make King and Rook Castle logic
+  //-make a Check and CheckMate
+  //-make a turns system
+  //-make a game log like white moved wK (b1) to (b3)
+  //-make a Black player View basically invert the board
+  //-label the X and Y axis of board
+  //-add more complex errors like King is in check, move other piece
+  //organize/clean/refine code
+    //-rook code is ugly
+    //-queen uses exact same bishop code, could reuse functions
 
+  //buid a cool front end
+  //put it on a blockchain
+  //make a checkers version
+  //make a tic tac toe version
 
-
+//https://codegolf.stackexchange.com/questions/148587/is-it-a-valid-chess-move
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2161,10 +2178,7 @@ return displayGame() + "result for that move"
 
 
 //your move
-
-
-
-movePiece("black","d5","c6")
+movePiece("white","d2","d4")
 
 
 
