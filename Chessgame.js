@@ -80,13 +80,13 @@ let filled = "filled"
 
 
 let board = [
-  [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bK,moved:false,index:"03",color:black,space:"filled"},e8={piece:bQ,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
+  [a8={piece:wK,moved:true,index:"00",color:white,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:wK,moved:true,index:"07",color:white,space:"filled"}],
   
   [a7={piece:bPawn1,moved:false,index:"10",color:black,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
   
   [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
   
-  [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wS,moved:false,index:"31",color:white,space:"empty"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:wS,moved:false,index:"33",color:white,space:"empty"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wS,moved:false,index:"35",color:white,space:"empty"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
+  [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wS,moved:false,index:"31",color:white,space:"empty"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:bK,moved:true,index:"33",color:black,space:"filled"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wS,moved:false,index:"35",color:white,space:"empty"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
   
   [a4={piece:wS,moved:false,index:"40",color:white,space:"empty"},b4={piece:bS,moved:false,index:"41",color:black,space:"empty"},c4={piece:wS,moved:false,index:"42",color:white,space:"empty"},d4={piece:bS,moved:false,index:"43",color:black,space:"empty"},e4={piece:wS,moved:false,index:"44",color:white,space:"empty"},f4={piece:bS,moved:false,index:"45",color:black,space:"empty"},g4={piece:wS,moved:false,index:"46",color:white,space:"empty"},h4={piece:bS,moved:false,index:"47",color:black,space:"empty"}],
   
@@ -94,7 +94,7 @@ let board = [
   
   [a2={piece:wPawn1,moved:false,index:"60",color:white,space:"filled"},b2={piece:wPawn2,moved:false,index:"61",color:white,space:"filled"},c2={piece:wPawn3,moved:false,index:"62",color:white,space:"filled"},d2={piece:wPawn4,moved:false,index:"63",color:white,space:"filled"},e2={piece:wPawn5,moved:false,index:"64",color:white,space:"filled"},f2={piece:wPawn6,moved:false,index:"65",color:white,space:"filled"},g2={piece:wPawn7,moved:false,index:"66",color:white,space:"filled"},h2={piece:wPawn8,moved:false,index:"67",color:white,space:"filled"}],
   
-  [a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wK,moved:false,index:"73",color:white,space:"filled"},e1={piece:wQ,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
+  [a1={piece:wK,moved:true,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wQ,moved:false,index:"73",color:white,space:"filled"},e1={piece:wK,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wK,moved:true,index:"77",color:white,space:"filled"}]
   ]
 
 
@@ -102,7 +102,7 @@ let board = [
 
 
 let board = [
-[a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bK,moved:false,index:"03",color:black,space:"filled"},e8={piece:bQ,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
+[a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
 
 [a7={piece:bPawn1,moved:false,index:"10",color:black,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
 
@@ -116,7 +116,7 @@ let board = [
 
 [a2={piece:wPawn1,moved:false,index:"60",color:white,space:"filled"},b2={piece:wPawn2,moved:false,index:"61",color:white,space:"filled"},c2={piece:wPawn3,moved:false,index:"62",color:white,space:"filled"},d2={piece:wPawn4,moved:false,index:"63",color:white,space:"filled"},e2={piece:wPawn5,moved:false,index:"64",color:white,space:"filled"},f2={piece:wPawn6,moved:false,index:"65",color:white,space:"filled"},g2={piece:wPawn7,moved:false,index:"66",color:white,space:"filled"},h2={piece:wPawn8,moved:false,index:"67",color:white,space:"filled"}],
 
-[a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wK,moved:false,index:"73",color:white,space:"filled"},e1={piece:wQ,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
+[a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wQ,moved:false,index:"73",color:white,space:"filled"},e1={piece:wK,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
 ]
 
 */
@@ -320,10 +320,10 @@ function whitePieceLogicSwitch (p1,p2){
         answer = [whiteBishopGameLogic(p1,p2)];
         break;
       case "♔":  
-        answer = "INSERT King LOGIC FUNCTION";
+        answer = [whiteKingGameLogic(p1,p2)];
         break;
       case "♕":  
-        answer = "INSERT Queen LOGIC FUNCTION";
+        answer = [whiteQueenGameLogic(p1,p2)];
         break;
     }
     return answer;
@@ -353,10 +353,10 @@ function blackPieceLogicSwitch (p1,p2){
         answer = [blackBishopGameLogic(p1,p2)];
         break;
       case "♚": 
-        answer = "INSERT King LOGIC FUNCTION";
+        answer = [blackKingGameLogic(p1,p2)];
         break;
       case "♛":  
-        answer = "INSERT Queen LOGIC FUNCTION";
+        answer = [blackQueenGameLogic(p1,p2)];
         break;
     }
     return answer;
@@ -1322,6 +1322,762 @@ function blackBishopGameLogic(p1,p2){
 }
 
 
+//logic function for White Queen
+function whiteQueenGameLogic(p1,p2){
+
+let possibleMoves = [];
+
+
+//up right Diagonal Move
+for (let i = 1; i < 8; i++) {
+
+  if (p1.index[0] - i > -1 & p1.index[1] +++ i < 8 ){
+
+    if (board[p1.index[0] - i][p1.index[1] +++ i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] - i][p1.index[1] +++ i].index)
+
+    } else {
+
+      if(board[p1.index[0] - i][p1.index[1] +++ i].color === "black"){
+        possibleMoves.push(board[p1.index[0] - i][p1.index[1] +++ i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+}
+
+
+//up left Diagonal Move
+for (let i = 1; i < 8; i++){
+
+  if (p1.index[0] - i > -1 & p1.index[1] - i > -1 ){
+
+    if (board[p1.index[0] - i][p1.index[1] - i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] - i][p1.index[1] - i].index)
+
+    } else {
+
+      if(board[p1.index[0] - i][p1.index[1] - i].color === "black"){
+        possibleMoves.push(board[p1.index[0] - i][p1.index[1] - i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+}
+
+
+//down left Diagonal Move
+for (let i = 1; i < 8; i++){
+
+
+  if (p1.index[0] +++ i < 8 & p1.index[1] - i > -1 ){
+
+    if (board[p1.index[0] +++ i][p1.index[1] - i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] - i].index)
+
+    } else {
+
+      if(board[p1.index[0] +++ i][p1.index[1] - i].color === "black"){
+        possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] - i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+}
+
+//down right Diagonal Move
+for (let i = 1; i < 8; i++){
+
+
+if (p1.index[0] +++ i < 8 & p1.index[1] +++ i < 8 ){
+
+  if (board[p1.index[0] +++ i][p1.index[1] +++ i].space === "empty"){
+
+    possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] +++ i].index)
+
+  } else {
+
+    if(board[p1.index[0] +++ i][p1.index[1] +++ i].color === "black"){
+      possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] +++ i].index)
+    }
+
+    i = 8;
+  }
+
+}
+
+}
+
+//moves directly up
+  for (let rookIndex1 = (p1.index[0] - 1); rookIndex1 > 0; rookIndex1--){
+
+    if (board[rookIndex1][(p1.index[1])].space === "empty" ){
+
+    possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+
+ } else {
+
+  if (board[rookIndex1][(p1.index[1])].color === "black" ){
+
+possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+
+  }
+
+  rookIndex1 = 0;
+
+ }
+
+}
+
+//moves directly down
+  for (let rookIndex2 = (p1.index[0] +++ 1); rookIndex2 < 8; rookIndex2++){
+
+
+    if (board[rookIndex2][(p1.index[1])].space === "empty" ){
+
+      possibleMoves.push(board[rookIndex2][(p1.index[1])].index);
+
+      } else {
+
+      if (board[rookIndex2][(p1.index[1])].color === "black" ){
+
+        possibleMoves.push(board[rookIndex2][(p1.index[1])].index);
+        
+      }
+
+      rookIndex2 = 8;
+
+    }
+
+  }
+
+//moves directly right
+  for (let rookIndex1 = p1.index[1] +++ 1; rookIndex1 < 8; rookIndex1++){
+
+    if (board[p1.index[0]][rookIndex1].space === "empty" ) {
+
+      possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+
+      } else {
+
+      if (board[p1.index[0]][rookIndex1].color === "black" ) {
+
+        possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+      
+        rookIndex1 = 9;
+      }
+
+      
+    
+    }
+    
+  }
+
+//moves directly left
+  for (let rookIndex1 = (p1.index[1] - 1); rookIndex1 > -1; rookIndex1--){
+
+   if (board[p1.index[0]][rookIndex1].space === "empty" ){
+
+    possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+
+ } else {
+
+
+  if (board[p1.index[0]][rookIndex1].color === "black" ){
+    possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+  }
+
+
+  rookIndex1 = 0;
+
+ }
+}
+
+
+
+
+
+
+
+
+
+
+  let valid = findValidity(possibleMoves,p2);
+  return valid
+}
+
+//logic function for Black Queen
+function blackQueenGameLogic(p1,p2){
+
+  let possibleMoves = [];
+
+
+  //up right Diagonal Move
+  for (let i = 1; i < 8; i++) {
+  
+    if (p1.index[0] - i > -1 & p1.index[1] +++ i < 8 ){
+  
+      if (board[p1.index[0] - i][p1.index[1] +++ i].space === "empty"){
+  
+        possibleMoves.push(board[p1.index[0] - i][p1.index[1] +++ i].index)
+  
+      } else {
+  
+        if(board[p1.index[0] - i][p1.index[1] +++ i].color === "white"){
+          possibleMoves.push(board[p1.index[0] - i][p1.index[1] +++ i].index)
+        }
+  
+        i = 8;
+      }
+  
+    }
+  
+  }
+  
+  
+  //up left Diagonal Move
+  for (let i = 1; i < 8; i++){
+  
+    if (p1.index[0] - i > -1 & p1.index[1] - i > -1 ){
+  
+      if (board[p1.index[0] - i][p1.index[1] - i].space === "empty"){
+  
+        possibleMoves.push(board[p1.index[0] - i][p1.index[1] - i].index)
+  
+      } else {
+  
+        if(board[p1.index[0] - i][p1.index[1] - i].color === "white"){
+          possibleMoves.push(board[p1.index[0] - i][p1.index[1] - i].index)
+        }
+  
+        i = 8;
+      }
+  
+    }
+  
+  }
+  
+  
+  //down left Diagonal Move
+  for (let i = 1; i < 8; i++){
+  
+  
+    if (p1.index[0] +++ i < 8 & p1.index[1] - i > -1 ){
+  
+      if (board[p1.index[0] +++ i][p1.index[1] - i].space === "empty"){
+  
+        possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] - i].index)
+  
+      } else {
+  
+        if(board[p1.index[0] +++ i][p1.index[1] - i].color === "white"){
+          possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] - i].index)
+        }
+  
+        i = 8;
+      }
+  
+    }
+  
+  }
+  
+  //down right Diagonal Move
+  for (let i = 1; i < 8; i++){
+  
+  
+  if (p1.index[0] +++ i < 8 & p1.index[1] +++ i < 8 ){
+  
+    if (board[p1.index[0] +++ i][p1.index[1] +++ i].space === "empty"){
+  
+      possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] +++ i].index)
+  
+    } else {
+  
+      if(board[p1.index[0] +++ i][p1.index[1] +++ i].color === "white"){
+        possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] +++ i].index)
+      }
+  
+      i = 8;
+    }
+  
+  }
+  
+  }
+  
+  //moves directly up
+    for (let rookIndex1 = (p1.index[0] - 1); rookIndex1 > 0; rookIndex1--){
+  
+      if (board[rookIndex1][(p1.index[1])].space === "empty" ){
+  
+      possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+  
+   } else {
+  
+    if (board[rookIndex1][(p1.index[1])].color === "white" ){
+  
+  possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
+  
+    }
+  
+    rookIndex1 = 0;
+  
+   }
+  
+  }
+  
+  //moves directly down
+    for (let rookIndex2 = (p1.index[0] +++ 1); rookIndex2 < 8; rookIndex2++){
+  
+  
+      if (board[rookIndex2][(p1.index[1])].space === "empty" ){
+  
+        possibleMoves.push(board[rookIndex2][(p1.index[1])].index);
+  
+        } else {
+  
+        if (board[rookIndex2][(p1.index[1])].color === "white" ){
+  
+          possibleMoves.push(board[rookIndex2][(p1.index[1])].index);
+          
+        }
+  
+        rookIndex2 = 8;
+  
+      }
+  
+    }
+  
+  //moves directly right
+    for (let rookIndex1 = p1.index[1] +++ 1; rookIndex1 < 8; rookIndex1++){
+  
+      if (board[p1.index[0]][rookIndex1].space === "empty" ) {
+  
+        possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+  
+        } else {
+  
+        if (board[p1.index[0]][rookIndex1].color === "white" ) {
+  
+          possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+        
+          rookIndex1 = 9;
+        }
+  
+        
+      
+      }
+      
+    }
+  
+  //moves directly left
+    for (let rookIndex1 = (p1.index[1] - 1); rookIndex1 > -1; rookIndex1--){
+  
+     if (board[p1.index[0]][rookIndex1].space === "empty" ){
+  
+      possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+  
+   } else {
+  
+  
+    if (board[p1.index[0]][rookIndex1].color === "white" ){
+      possibleMoves.push(board[p1.index[0]][rookIndex1].index);
+    }
+  
+  
+    rookIndex1 = 0;
+  
+   }
+  }
+  
+  
+  
+    let valid = findValidity(possibleMoves,p2);
+    return valid
+
+}
+
+
+//logic function for White King (except for castle)
+function whiteKingGameLogic(p1,p2){
+
+  let possibleMoves = [];
+
+//Diagonal Directions
+
+  //up right Diagonal Move (only by 1)
+  for (let i = 1; i < 2; i++) {
+
+  if (p1.index[0] - i > -1 & p1.index[1] +++ i < 8 ){
+
+    if (board[p1.index[0] - i][p1.index[1] +++ i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] - i][p1.index[1] +++ i].index)
+
+    } else {
+
+      if(board[p1.index[0] - i][p1.index[1] +++ i].color === "black"){
+        possibleMoves.push(board[p1.index[0] - i][p1.index[1] +++ i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+  }
+
+  //up left Diagonal Move (only by 1)
+  for (let i = 1; i < 2; i++){
+
+  if (p1.index[0] - i > -1 & p1.index[1] - i > -1 ){
+
+    if (board[p1.index[0] - i][p1.index[1] - i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] - i][p1.index[1] - i].index)
+
+    } else {
+
+      if(board[p1.index[0] - i][p1.index[1] - i].color === "black"){
+        possibleMoves.push(board[p1.index[0] - i][p1.index[1] - i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+  }
+
+  //down left Diagonal Move (only by 1)
+  for (let i = 1; i < 2; i++){
+
+
+  if (p1.index[0] +++ i < 8 & p1.index[1] - i > -1 ){
+
+    if (board[p1.index[0] +++ i][p1.index[1] - i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] - i].index)
+
+    } else {
+
+      if(board[p1.index[0] +++ i][p1.index[1] - i].color === "black"){
+        possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] - i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+  }
+
+  //down right Diagonal Move (only by 1)
+  for (let i = 1; i < 2; i++){
+
+
+if (p1.index[0] +++ i < 8 & p1.index[1] +++ i < 8 ){
+
+  if (board[p1.index[0] +++ i][p1.index[1] +++ i].space === "empty"){
+
+    possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] +++ i].index)
+
+  } else {
+
+    if(board[p1.index[0] +++ i][p1.index[1] +++ i].color === "black"){
+      possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] +++ i].index)
+    }
+
+    i = 8;
+  }
+
+}
+
+  }
+
+
+//Vertical & Horizontal Directions
+
+
+  //directly above moves (only by 1)
+
+  if (p1.index[0] - 1 != -1){
+
+if (board[p1.index[0] - 1][p1.index[1]].space === "empty"){
+
+  possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
+
+} else {
+  if (board[p1.index[0] - 1][p1.index[1]].color === "black"){
+
+    possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
+  }
+  
+}
+  }
+
+  //directly below moves (only by 1)
+
+  if (p1.index[0] +++ 1 != "8"){
+
+if (board[p1.index[0] +++ 1][p1.index[1]].space === "empty"){
+
+  possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1]].index);
+
+} else {
+  if (board[p1.index[0] +++ 1][p1.index[1]].color === "black"){
+
+    possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1]].index);
+  }
+  
+}
+
+  }
+
+  //directly to the right moves (only by 1)
+  if (p1.index[1] +++ 1 != "8"){
+
+if (board[p1.index[0]][p1.index[1] +++ 1].space === "empty"){
+
+  possibleMoves.push(board[p1.index[0]][p1.index[1] +++ 1].index);
+
+} else {
+  if (board[p1.index[0]][p1.index[1] +++ 1].color === "black"){
+
+    possibleMoves.push(board[p1.index[0]][p1.index[1] +++ 1].index);
+
+  }
+  
+}
+}
+
+  //directly to the left moves (only by 1)
+
+  if (p1.index[1] - 1 != -1){
+
+if (board[p1.index[0]][p1.index[1] - 1].space === "empty"){
+
+  possibleMoves.push(board[p1.index[0]][p1.index[1] - 1].index);
+
+} else {
+  if (board[p1.index[0]][p1.index[1] - 1].color === "black"){
+
+    possibleMoves.push(board[p1.index[0]][p1.index[1] - 1].index);
+  }
+  
+}
+  }
+
+
+
+
+
+
+
+
+
+
+
+let valid = findValidity(possibleMoves,p2);
+return valid
+
+}
+
+//logic function for Black King (except for castle)
+function blackKingGameLogic(p1,p2){
+
+  let possibleMoves = [];
+
+//Diagonal Directions
+
+  //up right Diagonal Move (only by 1)
+  for (let i = 1; i < 2; i++) {
+
+  if (p1.index[0] - i > -1 & p1.index[1] +++ i < 8 ){
+
+    if (board[p1.index[0] - i][p1.index[1] +++ i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] - i][p1.index[1] +++ i].index)
+
+    } else {
+
+      if(board[p1.index[0] - i][p1.index[1] +++ i].color === "white"){
+        possibleMoves.push(board[p1.index[0] - i][p1.index[1] +++ i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+  }
+
+  //up left Diagonal Move (only by 1)
+  for (let i = 1; i < 2; i++){
+
+  if (p1.index[0] - i > -1 & p1.index[1] - i > -1 ){
+
+    if (board[p1.index[0] - i][p1.index[1] - i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] - i][p1.index[1] - i].index)
+
+    } else {
+
+      if(board[p1.index[0] - i][p1.index[1] - i].color === "white"){
+        possibleMoves.push(board[p1.index[0] - i][p1.index[1] - i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+  }
+
+  //down left Diagonal Move (only by 1)
+  for (let i = 1; i < 2; i++){
+
+
+  if (p1.index[0] +++ i < 8 & p1.index[1] - i > -1 ){
+
+    if (board[p1.index[0] +++ i][p1.index[1] - i].space === "empty"){
+
+      possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] - i].index)
+
+    } else {
+
+      if(board[p1.index[0] +++ i][p1.index[1] - i].color === "white"){
+        possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] - i].index)
+      }
+
+      i = 8;
+    }
+
+  }
+
+  }
+
+  //down right Diagonal Move (only by 1)
+  for (let i = 1; i < 2; i++){
+
+
+if (p1.index[0] +++ i < 8 & p1.index[1] +++ i < 8 ){
+
+  if (board[p1.index[0] +++ i][p1.index[1] +++ i].space === "empty"){
+
+    possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] +++ i].index)
+
+  } else {
+
+    if(board[p1.index[0] +++ i][p1.index[1] +++ i].color === "white"){
+      possibleMoves.push(board[p1.index[0] +++ i][p1.index[1] +++ i].index)
+    }
+
+    i = 8;
+  }
+
+}
+
+  }
+
+
+//Vertical & Horizontal Directions
+
+
+  //directly above moves (only by 1)
+
+  if (p1.index[0] - 1 != -1){
+
+if (board[p1.index[0] - 1][p1.index[1]].space === "empty"){
+
+  possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
+
+} else {
+  if (board[p1.index[0] - 1][p1.index[1]].color === "white"){
+
+    possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
+  }
+  
+}
+  }
+
+  //directly below moves (only by 1)
+
+  if (p1.index[0] +++ 1 != "8"){
+
+if (board[p1.index[0] +++ 1][p1.index[1]].space === "empty"){
+
+  possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1]].index);
+
+} else {
+  if (board[p1.index[0] +++ 1][p1.index[1]].color === "white"){
+
+    possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1]].index);
+  }
+  
+}
+
+  }
+
+  //directly to the right moves (only by 1)
+  if (p1.index[1] +++ 1 != "8"){
+
+if (board[p1.index[0]][p1.index[1] +++ 1].space === "empty"){
+
+  possibleMoves.push(board[p1.index[0]][p1.index[1] +++ 1].index);
+
+} else {
+  if (board[p1.index[0]][p1.index[1] +++ 1].color === "white"){
+
+    possibleMoves.push(board[p1.index[0]][p1.index[1] +++ 1].index);
+
+  }
+  
+}
+}
+
+  //directly to the left moves (only by 1)
+
+  if (p1.index[1] - 1 != -1){
+
+if (board[p1.index[0]][p1.index[1] - 1].space === "empty"){
+
+  possibleMoves.push(board[p1.index[0]][p1.index[1] - 1].index);
+
+} else {
+  if (board[p1.index[0]][p1.index[1] - 1].color === "white"){
+
+    possibleMoves.push(board[p1.index[0]][p1.index[1] - 1].index);
+  }
+  
+}
+  }
+
+
+
+
+
+
+
+
+
+
+
+let valid = findValidity(possibleMoves,p2);
+return valid
+
+}
 
 
 
@@ -1408,7 +2164,7 @@ return displayGame() + "result for that move"
 
 
 
-movePiece("black","a8","g2")
+movePiece("black","d5","c6")
 
 
 
