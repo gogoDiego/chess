@@ -1,6 +1,4 @@
 
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
   _____  _           _                _____                      
@@ -82,9 +80,9 @@ let filled = "filled"
 let board = [
   [a8={piece:wS,moved:false,index:"00",color:white,space:"empty"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
   
-  [a7={piece:bS,moved:false,index:"10",color:black,space:"empty"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
+  [a7={piece:wPawn2,moved:true,index:"10",color:white,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:wPawn1,moved:true,index:"16",color:white,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
   
-  [a6={piece:wPawn1,moved:true,index:"20",color:white,space:"filled"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
+  [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
   
   [a5={piece:bS,moved:false,index:"30",color:black,space:"empty"},b5={piece:wS,moved:false,index:"31",color:white,space:"empty"},c5={piece:bS,moved:false,index:"32",color:black,space:"empty"},d5={piece:wS,moved:false,index:"33",color:white,space:"empty"},e5={piece:bS,moved:false,index:"34",color:black,space:"empty"},f5={piece:wS,moved:false,index:"35",color:white,space:"empty"},g5={piece:bS,moved:false,index:"36",color:black,space:"empty"},h5={piece:wS,moved:false,index:"37",color:white,space:"empty"}],
   
@@ -275,6 +273,69 @@ return valid
 }
 
 
+function promotionSwitch (letter){
+
+    let promotionStatement = "You have chosen ";
+
+    switch(letter) {    
+      case "Q": 
+        answer = (console.log(promotionStatement + "Queen"),"♕");
+        break;
+      case "B": 
+        answer = (console.log(promotionStatement + "Bishop"),"♗");
+        break;
+      case "R": 
+        answer = (console.log(promotionStatement + "Rook"),"♖");
+        break;
+      case "N": 
+        answer = (console.log(promotionStatement + "Knight"),"♘");
+        break;
+    
+    }
+    return answer;
+    }
+
+
+
+
+/////
+
+
+
+
+
+
+
+function promoTime (parameter){
+
+    //The Message
+console.log("Your Pawn needs to be Promoted!")
+console.log(" ")
+console.log(`add a Capital letter to desired postion, so like "a8Q" for your pawn to be promoted to a Queen!`)
+console.log(" ")
+console.log("pick a Piece")
+console.log(" ")
+console.log("Q = Queen")
+console.log("B = Bishop")
+console.log("R = Rook")
+console.log("N = Knight")
+
+
+
+let letterP = parameter
+
+return promotionSwitch(letterP)
+
+
+}
+
+/////
+
+
+
+
+
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -398,82 +459,114 @@ function blackPieceLogicSwitch (p1,p2){
 function whitePawnGameLogic (p1,p2){
 
     let possibleMoves = [];
-    
-    //2 options
-      //if statement hasnt moved then can go forward 1 or 2 square(and if empty space)
-      // else statement moved then only 1 forward, or the left/right attack
-    
-
 
     if (p1.moved === false ){
 
-      console.log("if Statement is running")
+        
+        
 
-      for (let i = 1; i < 3; i++){
-
-          if (board[p1.index[0] - i][p1.index[1]].space === "empty"){
-
-            possibleMoves.push(board[p1.index[0] - i][p1.index[1]].index);
+        //if havent moved, then can go forward 1 or 2 space
+        for (let i = 1; i < 3; i++){
   
-          } else {
-            i = 3
-          }
-        
-      }
-
+            if (board[p1.index[0] - i][p1.index[1]].space === "empty"){
+  
+              possibleMoves.push(board[p1.index[0] - i][p1.index[1]].index);
     
-    } else {
+            } else {
+              i = 3
+            }
+          
+        }   
+            } else {
 
-      //we have moved, so we can only move by +++1, or 1+++ (-1 or +1)
-    
-      if (p1.index[0] - 1 > 0){
 
+            //has moved pawn, only forward 1 or diagonal attack
         
-      if (board[p1.index[0] - 1][p1.index[1]].space === "empty"){
 
-        possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
-        
-      }
-
-      if (p1.index[1] - 1 > -1){
-
-        if (board[p1.index[0] - 1][p1.index[1] - 1].space === "black" ){
-          possibleMoves.push(board[p1.index[0] - 1][p1.index[1] - 1].index);
-        }
-        
-      }
-
-        if (p1.index[1] +++ 1 < 8){
-          if (board[p1.index[0] - 1][p1.index[1] +++ 1].space === "black" ){
-            possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1] - 1].index);
-      }
-      }
-
-
-
-    } else {
-      //the pawn is in the 1 row aka needs to get promoted
-      console.log("Your Pawn needs to be Promoted")
-
-      console.log("pick a Piece")
-      console.log("Q = Queen")
-      console.log("B = Bishop")
-      console.log("R = Rook")
-      console.log("N = Knight")
+            if (p1.index[0] - 1 >= 0){
       
+            //go forward
 
-    }
-
-    }
-
-
-
-
-
+                if (board[p1.index[0] - 1][p1.index[1]].space === "empty"){
+            
+                    possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
+                    
+                
 
 
+                
+            } else{
+
+                if (board[p1.index[0] - 1][p1.index[1]].color === "black"){
+
+                    possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
+
+                }
 
 
+            }
+
+
+            //attack diagonally left
+            if (p1.index[1] - 1 > -1){
+      
+              if (board[p1.index[0] - 1][p1.index[1] - 1].space === "empty" ){
+
+                possibleMoves.push(board[p1.index[0] - 1][p1.index[1] - 1].index);
+                console.log("left attack is running")
+                
+              } else{
+
+                if (board[p1.index[0] - 1][p1.index[1] - 1].color === "black" ){
+                    possibleMoves.push(board[p1.index[0] - 1][p1.index[1] - 1].index);
+                }
+
+              }
+              
+            }
+
+            
+
+            //attack diagonally right
+              if (p1.index[1] +++ 1 < 8){
+
+                
+
+                if (board[p1.index[0] - 1][p1.index[1] +++ 1].space === "empty" ){
+
+                  possibleMoves.push(board[p1.index[0] - 1][p1.index[1] +++ 1].index);
+                  console.log("right attack is running")
+
+                } else{
+
+                    if(board[p1.index[0] - 1][p1.index[1] +++ 1].color === "black"){
+                        possibleMoves.push(board[p1.index[0] - 1][p1.index[1] +++ 1].index);
+                    }
+
+
+                }
+
+
+
+            }
+      
+      
+      
+          } 
+
+    
+
+
+
+
+
+
+
+          
+      
+        }   
+    
+ 
 
     
     let valid = findValidity(possibleMoves,p2);
@@ -2120,11 +2213,13 @@ function movePiece (player,position1,position2){
 
 
 //which piece and where you want to move?
-let p1INA = chessPositionToIndexNotation(position1)
-let p2INB = chessPositionToIndexNotation(position2)
-let p1AObject = board[p1INA[0]][p1INA[1]];
-let p2BObject = board[p2INB[0]][p2INB[1]];
+let p1IN = chessPositionToIndexNotation(position1)
+let p2IN = chessPositionToIndexNotation(position2)
+let p1Object = board[p1IN[0]][p1IN[1]];
+let p2Object = board[p2IN[0]][p2IN[1]];
 
+
+promotion = position2[2];
 
 
 
@@ -2140,12 +2235,9 @@ let move = "Invalid Move";
 
 if (player == "white"){
 
-  if (p1AObject.color == "white"){
+  if (p1Object.color == "white"){
 
-  move = whitePieceLogicSwitch(position1,position2)
-
- promotion = position2[2];
-
+  move = whitePieceLogicSwitch(p1Object,p2Object)
 
 } else {
   console.log("White needs to move white Piece")
@@ -2153,7 +2245,7 @@ if (player == "white"){
 
 } else {
 
-  if (p1AObject.color == "black"){
+  if (p1Object.color == "black"){
 
   move = blackPieceLogicSwitch(p1Object,p2Object)
 
@@ -2175,13 +2267,28 @@ if (player == "white"){
 
   } else {
   
-  let tempPiece = board[p1INA[0]][p1INA[1]].piece
-  board[p2INB[0]][p2INB[1]].piece = tempPiece
+  let tempPiece = board[p1IN[0]][p1IN[1]].piece
+  board[p2IN[0]][p2IN[1]].piece = tempPiece
   bSorwS(position1) 
-  p1AObject.space = "empty"
-  p2BObject.moved = "true"
-  p2BObject.space = "filled"
-  p2BObject.color = p1AObject.color
+  p1Object.space = "empty"
+  p2Object.moved = "true"
+  p2Object.space = "filled"
+  p2Object.color = p1Object.color
+
+
+
+  //if p2[2] = Q then set piece to Q
+
+    if (position2.length = 3){
+
+    let prom = position2[2]
+    let setterPromotion = promoTime(prom)
+
+    p2Object.piece = setterPromotion;
+
+    }
+
+
 
 
 
@@ -2193,8 +2300,10 @@ return displayGame() + "result for that move"
 
 
 //your move
-movePiece("white","a6","a7")
-movePiece("white","a7","a8Q")
+movePiece("white","g7","h8Q")
+
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
