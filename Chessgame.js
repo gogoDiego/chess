@@ -277,6 +277,8 @@ function promotionSwitch (letter){
 
     let promotionStatement = "You have chosen ";
 
+     let answer = "N/A";
+
     switch(letter) {    
       case "Q": 
         answer = (console.log(promotionStatement + "Queen"),"♕");
@@ -2284,7 +2286,18 @@ if (player == "white"){
     let prom = position2[2]
     let setterPromotion = promoTime(prom)
 
-    p2Object.piece = setterPromotion;
+  
+
+    if (setterPromotion != "N/A"){
+
+      p2Object.piece = setterPromotion;
+      
+    } else {
+      console.log(" ")
+      console.log("please pick a piece")
+
+    }
+    
 
     }
 
@@ -2300,7 +2313,8 @@ return displayGame() + "result for that move"
 
 
 //your move
-movePiece("white","g7","h8Q")
+movePiece("white","a7","a8")
+movePiece("white","a7","a8Q")
 
 
 
