@@ -78,9 +78,9 @@ let filled = "filled"
 
 
 let board = [
-  [a8={piece:wS,moved:false,index:"00",color:white,space:"empty"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
+  [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
   
-  [a7={piece:wPawn2,moved:true,index:"10",color:white,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:wPawn1,moved:true,index:"16",color:white,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
+  [a7={piece:bPawn1,moved:false,index:"10",color:black,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
   
   [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
   
@@ -273,7 +273,7 @@ return valid
 }
 
 
-function promotionSwitch (letter){
+function whitepromotionSwitch (letter){
 
     let promotionStatement = "You have chosen ";
 
@@ -298,19 +298,33 @@ function promotionSwitch (letter){
     }
 
 
+function blackPromotionSwitch (letter){
+
+  let promotionStatement = "You have chosen ";
+
+   let answer = "N/A";
+
+  switch(letter) {    
+    case "Q": 
+      answer = (console.log(promotionStatement + "Queen"),"♛");
+      break;
+    case "B": 
+      answer = (console.log(promotionStatement + "Bishop"),"♝");
+      break;
+    case "R": 
+      answer = (console.log(promotionStatement + "Rook"),"♜");
+      break;
+    case "N": 
+      answer = (console.log(promotionStatement + "Knight"),"♞");
+      break;
+  
+  }
+  return answer;
+  }
 
 
-/////
+function promoMessage(){
 
-
-
-
-
-
-
-function promoTime (parameter){
-
-    //The Message
 console.log("Your Pawn needs to be Promoted!")
 console.log(" ")
 console.log(`add a Capital letter to desired postion, so like "a8Q" for your pawn to be promoted to a Queen!`)
@@ -322,16 +336,33 @@ console.log("B = Bishop")
 console.log("R = Rook")
 console.log("N = Knight")
 
+}
 
+
+function whitepromoTime (parameter){
+
+promoMessage();
 
 let letterP = parameter
 
-return promotionSwitch(letterP)
+return whitepromotionSwitch(letterP)
 
 
 }
 
-/////
+function blackpromoTime (parameter){
+
+  promoMessage();
+  
+  let letterP = parameter
+  
+  return blackPromotionSwitch(letterP)
+  
+  
+  }
+
+
+
 
 
 
@@ -464,9 +495,6 @@ function whitePawnGameLogic (p1,p2){
 
     if (p1.moved === false ){
 
-        
-        
-
         //if havent moved, then can go forward 1 or 2 space
         for (let i = 1; i < 3; i++){
   
@@ -481,9 +509,7 @@ function whitePawnGameLogic (p1,p2){
         }   
             } else {
 
-
             //has moved pawn, only forward 1 or diagonal attack
-        
 
             if (p1.index[0] - 1 >= 0){
       
@@ -492,11 +518,7 @@ function whitePawnGameLogic (p1,p2){
                 if (board[p1.index[0] - 1][p1.index[1]].space === "empty"){
             
                     possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
-                    
-                
-
-
-                
+                     
             } else{
 
                 if (board[p1.index[0] - 1][p1.index[1]].color === "black"){
@@ -504,10 +526,7 @@ function whitePawnGameLogic (p1,p2){
                     possibleMoves.push(board[p1.index[0] - 1][p1.index[1]].index);
 
                 }
-
-
             }
-
 
             //attack diagonally left
             if (p1.index[1] - 1 > -1){
@@ -525,14 +544,10 @@ function whitePawnGameLogic (p1,p2){
 
               }
               
-            }
-
-            
+            }          
 
             //attack diagonally right
               if (p1.index[1] +++ 1 < 8){
-
-                
 
                 if (board[p1.index[0] - 1][p1.index[1] +++ 1].space === "empty" ){
 
@@ -544,28 +559,9 @@ function whitePawnGameLogic (p1,p2){
                     if(board[p1.index[0] - 1][p1.index[1] +++ 1].color === "black"){
                         possibleMoves.push(board[p1.index[0] - 1][p1.index[1] +++ 1].index);
                     }
-
-
-                }
-
-
-
+              }
             }
-      
-      
-      
           } 
-
-    
-
-
-
-
-
-
-
-          
-      
         }   
     
  
@@ -581,70 +577,104 @@ function whitePawnGameLogic (p1,p2){
 //logic functions for the BLACK Pawn (*still needs promotion logic)
 function blackPawnGameLogic (p1,p2) {
 
+console.log("black pawn game logic is runnning")
+
+
 let possibleMoves = [];
 
-let pieceInfront = p1.index[0] +++ 1;
-let pieceInfrontleft = p1.index[1] - 1;
-let pieceInfrontright = p1.index[1] +++ 1;
 
 
-
-//2 options
-  //if statement hasnt moved then can go forward 1 or 2 square(and if empty space)
-  // else statement moved then only 1 forward, or if one is infront and to left/right, then attack
+console.log(p1.moved)
 
 if (p1.moved === false ){
 
-    for (let pawnforloopCounter = (p1.index[0] +++ 1); pawnforloopCounter < 4 ; pawnforloopCounter++){
+console.log("hasnt moved")
 
-        if (board[pawnforloopCounter][(p1.index[1])].space === "empty" ){
+  //if havent moved, then can go forward 1 or 2 space
+  for (let i = 1; i < 3; i++){
+
+      if (board[p1.index[0] +++ i][p1.index[1]].space === "empty"){
+
+        possibleMoves.push(board[p1.index[0] +++ i][p1.index[1]].index);
+
+      } else {
+        i = 3
+      }
+    
+  }   
+      } else {
+
+      //has moved pawn, only forward 1 or diagonal attack
+
+
+      console.log("has moved")
+
+
   
-        possibleMoves.push(board[pawnforloopCounter][(p1.index[1])].index);
-  
-   } else {
-      pawnforloopCounter = 5
-   }
-  
-  }
 
-} else {
+      if (p1.index[0] +++ 1 < 8){
+
+      //go forward
+
+        
 
 
-if ( board[(pieceInfront)][(p1.index[1])].space === "empty" ) {
+          if (board[p1.index[0] +++ 1][p1.index[1]].space === "empty"){
+      
+              possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1]].index);
+               
+      } else{
 
-possibleMoves.push( board[(pieceInfront)][(p1.index[1])].index)
+          if (board[p1.index[0] +++ 1][p1.index[1]].color === "white"){
 
-} else {
+              possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1]].index);
+
+          }
+      }
+
+      //attack diagonally left
+      if (p1.index[1] - 1 > -1){
+
+        if (board[p1.index[0] +++ 1][p1.index[1] - 1].space === "empty" ){
+
+          possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1] - 1].index);
+          console.log("left attack is running")
+          
+        } else{
+
+          if (board[p1.index[0] +++ 1][p1.index[1] - 1].color === "white" ){
+              possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1] - 1].index);
+          }
+
+        }
+        
+      }          
+
+      //attack diagonally right
+        if (p1.index[1] +++ 1 < 8){
+
+          if (board[p1.index[0] +++ 1][p1.index[1] +++ 1].space === "empty" ){
+
+            possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1] +++ 1].index);
+            console.log("right attack is running")
+
+          } else{
+
+              if (board[p1.index[0] +++ 1][p1.index[1] +++ 1].color === "white"){
+                  possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1] +++ 1].index);
+              }
+        }
+      }
+    } 
+  }   
 
 
-//(we know theres 1 piece infront of pawn)
-  //if theres a piece infront left add it to array
-   //if theres a piece infront right add it to array
 
- if (pieceInfrontright != 8 ){
 
-  //right infront
-  if (board[(pieceInfront)][(pieceInfrontright)].space === "filled" & board[pieceInfront][(pieceInfrontright)].color === "white") {
 
-    possibleMoves.push(board[(pieceInfront)][(pieceInfrontright)].index)
- 
- }
 
-}
 
-}
 
-if (pieceInfrontleft !== -1 ){
-
-   //left infront
-
-   if (board[(pieceInfront)][(pieceInfrontleft)].space === "filled" & board[(pieceInfront)][(pieceInfrontleft)].color === "white"){
-
-    possibleMoves.push(board[(pieceInfront)][(pieceInfrontleft)].index)
-  
-  }
- }
-}
 
 let valid = findValidity(possibleMoves,p2);
 
@@ -2183,10 +2213,19 @@ return valid
 }
 
 
+//Castling Psudo Code
+  // If King & Rook havent moved 
+  // king moves 2 to left/right, rook moves to the middle
+      //Left Castling
+  //king moves 2 spaces to the left (- 2 for [1]) & rook moves 3 to right
+    //right Castling
+  //king moves 2 spaces to the rigth (+++ 2 for [1]) & rook moves 2 to left
+
+
+
+
 
 //To Do List
-  //-fix pawn attack logic(can attack diagonaly even if piece isnt infront)
-  //-Make Pawn Promotion logic
   //-make King and Rook Castle logic
   //-make a Check and CheckMate
   //-make a turns system
@@ -2284,11 +2323,20 @@ if (player == "white"){
     if (position2.length = 3){
 
     let prom = position2[2]
-    let setterPromotion = promoTime(prom)
+    let setterPromotion = "N/A";
 
-  
 
-    if (setterPromotion != "N/A"){
+    if (player == "white"){
+
+    setterPromotion = whitepromoTime(prom)
+
+    } else {
+
+    setterPromotion = blackpromoTime(prom)
+
+    }
+
+    if (setterPromotion != ""){
 
       p2Object.piece = setterPromotion;
       
@@ -2313,8 +2361,8 @@ return displayGame() + "result for that move"
 
 
 //your move
-movePiece("white","a7","a8")
-movePiece("white","a7","a8Q")
+movePiece("black","b2","b1R")
+
 
 
 
