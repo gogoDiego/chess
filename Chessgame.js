@@ -64,7 +64,7 @@ let filled = "filled"
 
 
 let board = [
-  [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
+  [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bS,moved:false,index:"01",color:black,space:"empty"},c8={piece:wS,moved:false,index:"02",color:white,space:"empty"},d8={piece:bS,moved:false,index:"03",color:black,space:"empty"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bS,moved:false,index:"05",color:black,space:"empty"},g8={piece:wS,moved:false,index:"06",color:white,space:"empty"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
   
   [a7={piece:bP,moved:false,index:"10",color:black,space:"filled"},b7={piece:bP,moved:false,index:"11",color:black,space:"filled"},c7={piece:bP,moved:false,index:"12",color:black,space:"filled"},d7={piece:bP,moved:false,index:"13",color:black,space:"filled"},e7={piece:bP,moved:false,index:"14",color:black,space:"filled"},f7={piece:bP,moved:false,index:"15",color:black,space:"filled"},g7={piece:bP,moved:false,index:"16",color:black,space:"filled"},h7={piece:bP,moved:false,index:"17",color:black,space:"filled"}],
   
@@ -78,9 +78,8 @@ let board = [
   
   [a2={piece:wP,moved:false,index:"60",color:white,space:"filled"},b2={piece:wP,moved:false,index:"61",color:white,space:"filled"},c2={piece:wP,moved:false,index:"62",color:white,space:"filled"},d2={piece:wP,moved:false,index:"63",color:white,space:"filled"},e2={piece:wP,moved:false,index:"64",color:white,space:"filled"},f2={piece:wP,moved:false,index:"65",color:white,space:"filled"},g2={piece:wP,moved:false,index:"66",color:white,space:"filled"},h2={piece:wP,moved:false,index:"67",color:white,space:"filled"}],
   
-  [a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wQ,moved:false,index:"73",color:white,space:"filled"},e1={piece:wK,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
+  [a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wS,moved:false,index:"71",color:white,space:"empty"},c1={piece:bS,moved:false,index:"72",color:black,space:"empty"},d1={piece:wS,moved:false,index:"73",color:white,space:"empty"},e1={piece:wK,moved:false,index:"74",color:white,space:"filled"},f1={piece:wS,moved:false,index:"75",color:white,space:"empty"},g1={piece:bS,moved:false,index:"76",color:black,space:"empty"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
   ]
-
 
 /*
 
@@ -243,8 +242,10 @@ function findValidity (array,p2){
   console.log(" ^dev tools^ ")
 
 
- let specialMoveCharacter = chessPositionToIndexNotation(globalPosition2) + globalPosition2[2];
+ let specialMoveCharacter = chessPositionToIndexNotation(globalPosition2) + globalPosition2[2]; 
  let target = p2.index;
+
+
 
 
 
@@ -253,10 +254,23 @@ function findValidity (array,p2){
       return (item == target)
   }
   
+
 //valid Special Moves (return items over length of 3 & equals to position2)
   function approvedSpecialMoveInArray (item){
 
-    return (item.length == 3 & item == specialMoveCharacter )
+
+
+    if (item.length > 2 & item == specialMoveCharacter){
+
+      return true
+
+    } else if (item === Rookright || item === Rookleft ){
+
+      return true
+      
+    } 
+
+    return
     }
 
 
@@ -271,7 +285,6 @@ function findValidity (array,p2){
 
   let validMove = array.some(approvedMoveInArray);
   let validSpecialmove = array.some(approvedSpecialMoveInArray);
-
 
 
   let valid = "Invalid Move"
@@ -290,11 +303,13 @@ function findValidity (array,p2){
   if (specialvalidPlayerAndColor = "White player moves White Piece"){
 
      valid = "White Valid Special Move"
-
+    
 
   } else if (specialvalidPlayerAndColor = "Black player moves Black Piece"){
 
     valid = "Black Valid Special Move"
+
+    
 
   } 
 
@@ -317,6 +332,9 @@ function findValidity (array,p2){
 return valid
 
 }
+
+
+
 
 
 function whitepromotionSwitch (letter){
@@ -415,6 +433,9 @@ function blackpromoTime (parameter){
 
   function leftWhiteCastle () {
 
+console.log("dog")
+
+
 //white king e1 to c1 aka [7][2]
 board[7][2].piece = board[7][4].piece;
 
@@ -438,8 +459,6 @@ board[7][4].color = black;
 return "You have Left Castled"
 }
 
-
-
   function rightWhiteCastle (){
 
 //white king e1 to g1 aka [7][6]
@@ -462,20 +481,60 @@ board[7][7].color = black;
 board[7][4].color = black;
 
 
-
+return "You have Right Castled"
 
   }
 
   function leftBlackCastle (){
 
+//black king e8 [0][4] to c8 aka [0][2]
+board[0][2].piece = board[0][4].piece;
 
+//black rook a8[0][0] to d8 aka [0][3]
+board[0][3].piece = board[0][0].piece
+
+//replace e8 & a8 with empty square
+
+bSorwS("e8")
+bSorwS("a8")
+
+//reset: space, moved & color
+board[0][0].space = "empty";
+board[0][4].space = "empty";
+board[0][0].moved = false;
+board[0][4].moved = false;
+board[0][0].color = black;
+board[0][4].color = black;
+
+
+return "You have Left Castled"
 
 
   }
 
   function rightBlackCastle (){
 
+//black king e1 to g1 aka [7][6]
+board[0][6].piece = board[0][4].piece;
 
+//black rook h1 to f1 aka [7][5]
+board[0][5].piece = board[0][7].piece
+
+//replace h1 & e1 with empty square
+
+bSorwS("h8")
+bSorwS("e8")
+
+//reset: space, moved & color
+board[0][7].space = "empty";
+board[0][4].space = "empty";
+board[0][7].moved = false;
+board[0][4].moved = false;
+board[0][7].color = black;
+board[0][4].color = black;
+
+
+return "You have Right Castled"
 
 
   }
@@ -484,6 +543,7 @@ board[7][4].color = black;
   function castleSwitch (castle){
 
 let c1 = castle[0] + castle[1];
+
 
 
     switch(c1) {  
@@ -495,13 +555,71 @@ let c1 = castle[0] + castle[1];
         rightWhiteCastle();
         break;
       case "a8": 
-        
+      leftBlackCastle();
         break;
       case "h8": 
-        
+      rightBlackCastle()
+        break;
+        case "e8" : 
+        whichRookCastle();
+        break;
+        case "e1" : 
+        whichRookCastle();
         break;
     }
     return ;
+}
+
+
+
+
+function whichRookCastle (){
+ 
+console.log(globalPosition2)
+console.log(Rookleft)
+
+
+if (globalPosition2 === "e8C" ){
+
+  
+  if (Rookleft === "04Ca" & globalPosition1 === "a8"){
+
+   
+    leftBlackCastle()
+    
+  }
+
+  if (Rookright === "04Cb" & globalPosition1 === "h8"){
+
+    rightBlackCastle()
+
+  }
+
+
+
+
+
+} else if (globalPosition2 === "e1C"){
+
+  if (Rookleft === "74Ca" & globalPosition1 === "a1"){
+
+    leftWhiteCastle()
+
+  }
+
+  if (Rookright === "74Cb" & globalPosition1 === "h1"){
+
+    rightWhiteCastle()
+
+  }
+
+
+
+
+
+}
+
+
 }
 
 
@@ -662,6 +780,10 @@ function whiteSpecialMovesSwitch (){
 function blackSpecialMovesSwitch (){
 
 letter = globalPosition2[2]
+
+
+
+
 
   switch(letter) {    
     case "C": 
@@ -942,8 +1064,6 @@ possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
 
 }
 
-
-
   //all possible moves backward
   for (let rookIndex2 = (p1.index[0] +++ 1); rookIndex2 < 8; rookIndex2++){
 
@@ -1012,6 +1132,46 @@ possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
 }
 
 
+
+//king Casling Logic left
+
+if (board[[7]][[0]].moved === false & board[7][4].moved === false ){
+
+
+
+
+  if (board[7][1].space === "empty" & board[7][2].space === "empty"){
+  
+
+
+    if (board[7][3].space === "empty") {
+
+       possibleMoves.push(board[7][4].index + "Ca");
+       Rookleft = (board[7][4].index + "Ca");
+  
+      }
+    }
+  }
+  
+  //king Casling Logic right
+
+
+
+  if (board[7][7].moved == false & board[7][4].moved == false ){
+  
+    
+    if (board[7][6].space == "empty" & board[7][5].space == "empty"){
+    
+    
+         possibleMoves.push(board[7][4].index + "Cb");
+         Rookright = (board[7][4].index + "Cb");
+    }
+  }
+
+
+
+
+
 let valid = findValidity(possibleMoves,p2);
 return valid
 
@@ -1025,7 +1185,10 @@ return valid
 
 //logic function for black rook (need castle with king logic)
 function blackRookGameLogic(p1,p2){
- 
+
+
+
+
   let possibleMoves = [];
 
   //all possible moves forwards
@@ -1049,8 +1212,6 @@ possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
  }
 
 }
-
-
 
   //all possible moves backward
   for (let rookIndex2 = (p1.index[0] +++ 1); rookIndex2 < 8; rookIndex2++){
@@ -1097,7 +1258,6 @@ possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
     
   }
 
-
   //all possible moves left
 
   for (let rookIndex1 = (p1.index[1] - 1); rookIndex1 > -1; rookIndex1--){
@@ -1120,10 +1280,52 @@ possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
 }
 
 
+
+
+
+//king Casling Logic left
+
+if (board[p1.index[0]][p1.index[0]].moved === false & board[0][4].moved === false ){
+
+
+
+
+  if (board[0][1].space === "empty" & board[0][2].space === "empty"){
+  
+
+
+    if (board[0][3].space === "empty") {
+
+       possibleMoves.push(board[0][4].index + "Ca");
+       Rookleft = (board[0][4].index + "Ca");
+  
+      }
+    }
+  }
+  
+  //king Casling Logic right
+
+
+
+  if (board[0][7].moved == false & board[0][4].moved == false ){
+  
+    
+    if (board[0][6].space == "empty" & board[0][5].space == "empty"){
+    
+    
+         possibleMoves.push(board[0][4].index + "Cb");
+         Rookright = (board[0][4].index + "Cb");
+    }
+  }
+
+
+
 let valid = findValidity(possibleMoves,p2);
 return valid
 
 }
+
+
 
 //logic function for white Knight
 function whiteKnightGameLogic(p1,p2){
@@ -2079,7 +2281,7 @@ function blackQueenGameLogic(p1,p2){
 
 }
 
-//logic function for White King (except for castle)
+//logic function for White King 
 function whiteKingGameLogic(p1,p2){
 
   let possibleMoves = [];
@@ -2267,7 +2469,7 @@ if (board[7][1].space === "empty" & board[7][2].space === "empty"){
 
 //king Casling Logic right
 
-if (board[p1.index[0]][p1.index[1]].moved === false & board[7][7].moved === false ){
+if (board[[0]][[1]].moved === false & board[7][7].moved === false ){
 
   
   if (board[7][6].space === "empty" & board[7][5].space === "empty"){
@@ -2292,10 +2494,11 @@ return valid
 
 }
 
-//logic function for Black King (except for castle)
+//logic function for Black King 
 function blackKingGameLogic(p1,p2){
 
   let possibleMoves = [];
+
 
 //Diagonal Directions
 
@@ -2465,7 +2668,34 @@ if (board[p1.index[0]][p1.index[1] - 1].space === "empty"){
 
 
 
+//king Casling Logic left
 
+if (board[p1.index[0]][p1.index[1]].moved === false & board[0][0].moved === false ){
+
+
+  if (board[0][1].space === "empty" & board[0][2].space === "empty"){
+  
+    if (board[0][3].space === "empty") {
+  
+       possibleMoves.push(board[0][0].index + "C");
+  
+    }
+  }
+  }
+  
+  //king Casling Logic right
+  
+  if (board[p1.index[0]][p1.index[1]].moved === false & board[0][7].moved === false ){
+  
+    
+    if (board[0][6].space === "empty" & board[0][5].space === "empty"){
+    
+    
+         possibleMoves.push(board[0][7].index + "C");
+    
+      
+    }
+    }
 
 
 
@@ -2478,20 +2708,12 @@ return valid
 }
 
 
-//Castling Psudo Code
-  // If King & Rook havent moved 
-  // king moves 2 to left/right, rook moves to the middle
-      //Left Castling
-  //king moves 2 spaces to the left (- 2 for [1]) & rook moves 3 to right
-    //right Castling
-  //king moves 2 spaces to the rigth (+++ 2 for [1]) & rook moves 2 to left
-
 
 
 
 
 //To Do List
-  //-make King and Rook Castle logic
+  //en passant special move
   //-make a Check and CheckMate
   //-make a turns system
   //-make a game log like white moved wK (b1) to (b3)
@@ -2518,6 +2740,7 @@ return valid
 
 function movePiece (player,position1,position2){
 
+ 
 
 //which piece and where you want to move?
   let p1IN = chessPositionToIndexNotation(position1)
@@ -2540,14 +2763,17 @@ validPlayerAndColor = sameColorPlayerAndPiece(player,position1)
 
 
 
-
 //if player moves right color, then relay to Piece Logic Switch
-  if (validPlayerAndColor = "White player moves White Piece"){
+  if (validPlayerAndColor == "White player moves White Piece"){
 
     movePiece = whitePieceLogicSwitch(p1Object,p2Object)
+    
 
-  } else if (validPlayerAndColor = "Black player moves Black Piece"){
 
+  } else if (validPlayerAndColor == "Black player moves Black Piece"){
+
+    
+   
     movePiece = blackPieceLogicSwitch(p1Object,p2Object)
 
   }
@@ -2579,31 +2805,28 @@ validPlayerAndColor = sameColorPlayerAndPiece(player,position1)
 
   } else {
   
-
-
-
   //if move piece
   if (movePiece == "White Valid Special Move"){
 
     whiteSpecialMovesSwitch()
     console.log("Valid Move")
-  } else{
-  console.log("Invalid move")
-  }
+
+  } 
+
+
 
   if (movePiece == "Black Valid Special Move"){
 
     blackSpecialMovesSwitch()
     console.log("Valid Move")
-  } else{
-    console.log("Invalid move")
+
   }
 
 
     
 
 
-
+console.log("invalid move")
 
 
   }
@@ -2616,6 +2839,6 @@ return displayGame() + "result for that move"
 
 
 //your move
-movePiece("white","a2","a5")
+movePiece("white","h1","e1C")
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
