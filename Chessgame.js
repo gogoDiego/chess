@@ -27,14 +27,7 @@ let wQ = ("♕")
 let wR = ("♖")
 let wB = ("♗")
 let wN = ("♘")
-let wPawn1 = ("♙")
-let wPawn2 = ("♙")
-let wPawn3 = ("♙")
-let wPawn4 = ("♙")
-let wPawn5 = ("♙")
-let wPawn6 = ("♙")
-let wPawn7 = ("♙")
-let wPawn8 = ("♙")
+let wP = ("♙")
 let wS = ("▯")
 let white = "white"
 let line = ("]")
@@ -45,14 +38,7 @@ let bQ = ("♛")
 let bR = ("♜")
 let bB = ("♝")
 let bN = ("♞")
-let bPawn1 = ("♟")
-let bPawn2 = ("♟")
-let bPawn3 = ("♟")
-let bPawn4 = ("♟")
-let bPawn5 = ("♟")
-let bPawn6 = ("♟")
-let bPawn7 = ("♟")
-let bPawn8 = ("♟")
+let bP = ("♟")
 let bS = ("▮")
 let black = "black"
 
@@ -80,7 +66,7 @@ let filled = "filled"
 let board = [
   [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
   
-  [a7={piece:bPawn1,moved:false,index:"10",color:black,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
+  [a7={piece:bP,moved:false,index:"10",color:black,space:"filled"},b7={piece:bP,moved:false,index:"11",color:black,space:"filled"},c7={piece:bP,moved:false,index:"12",color:black,space:"filled"},d7={piece:bP,moved:false,index:"13",color:black,space:"filled"},e7={piece:bP,moved:false,index:"14",color:black,space:"filled"},f7={piece:bP,moved:false,index:"15",color:black,space:"filled"},g7={piece:bP,moved:false,index:"16",color:black,space:"filled"},h7={piece:bP,moved:false,index:"17",color:black,space:"filled"}],
   
   [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
   
@@ -90,7 +76,7 @@ let board = [
   
   [a3={piece:bS,moved:false,index:"50",color:black,space:"empty"},b3={piece:wS,moved:false,index:"51",color:white,space:"empty"},c3={piece:bS,moved:false,index:"52",color:black,space:"empty"},d3={piece:wS,moved:false,index:"53",color:white,space:"empty"},e3={piece:bS,moved:false,index:"54",color:black,space:"empty"},f3={piece:wS,moved:false,index:"55",color:white,space:"empty"},g3={piece:bS,moved:false,index:"56",color:black,space:"empty"},h3={piece:wS,moved:false,index:"57",color:white,space:"empty"}],
   
-  [a2={piece:wPawn1,moved:false,index:"60",color:white,space:"filled"},b2={piece:wPawn2,moved:false,index:"61",color:white,space:"filled"},c2={piece:wPawn3,moved:false,index:"62",color:white,space:"filled"},d2={piece:wPawn4,moved:false,index:"63",color:white,space:"filled"},e2={piece:wPawn5,moved:false,index:"64",color:white,space:"filled"},f2={piece:wPawn6,moved:false,index:"65",color:white,space:"filled"},g2={piece:wPawn7,moved:false,index:"66",color:white,space:"filled"},h2={piece:wPawn8,moved:false,index:"67",color:white,space:"filled"}],
+  [a2={piece:wP,moved:false,index:"60",color:white,space:"filled"},b2={piece:wP,moved:false,index:"61",color:white,space:"filled"},c2={piece:wP,moved:false,index:"62",color:white,space:"filled"},d2={piece:wP,moved:false,index:"63",color:white,space:"filled"},e2={piece:wP,moved:false,index:"64",color:white,space:"filled"},f2={piece:wP,moved:false,index:"65",color:white,space:"filled"},g2={piece:wP,moved:false,index:"66",color:white,space:"filled"},h2={piece:wP,moved:false,index:"67",color:white,space:"filled"}],
   
   [a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wQ,moved:false,index:"73",color:white,space:"filled"},e1={piece:wK,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
   ]
@@ -102,7 +88,7 @@ let board = [
 let board = [
 [a8={piece:bR,moved:false,index:"00",color:black,space:"filled"},b8={piece:bN,moved:false,index:"01",color:black,space:"filled"},c8={piece:bB,moved:false,index:"02",color:black,space:"filled"},d8={piece:bQ,moved:false,index:"03",color:black,space:"filled"},e8={piece:bK,moved:false,index:"04",color:black,space:"filled"},f8={piece:bB,moved:false,index:"05",color:black,space:"filled"},g8={piece:bN,moved:false,index:"06",color:black,space:"filled"},h8={piece:bR,moved:false,index:"07",color:black,space:"filled"}],
 
-[a7={piece:bPawn1,moved:false,index:"10",color:black,space:"filled"},b7={piece:bPawn2,moved:false,index:"11",color:black,space:"filled"},c7={piece:bPawn3,moved:false,index:"12",color:black,space:"filled"},d7={piece:bPawn4,moved:false,index:"13",color:black,space:"filled"},e7={piece:bPawn5,moved:false,index:"14",color:black,space:"filled"},f7={piece:bPawn6,moved:false,index:"15",color:black,space:"filled"},g7={piece:bPawn7,moved:false,index:"16",color:black,space:"filled"},h7={piece:bPawn1,moved:false,index:"17",color:black,space:"filled"}],
+[a7={piece:bP,moved:false,index:"10",color:black,space:"filled"},b7={piece:bP,moved:false,index:"11",color:black,space:"filled"},c7={piece:bP,moved:false,index:"12",color:black,space:"filled"},d7={piece:bP,moved:false,index:"13",color:black,space:"filled"},e7={piece:bP,moved:false,index:"14",color:black,space:"filled"},f7={piece:bP,moved:false,index:"15",color:black,space:"filled"},g7={piece:bP,moved:false,index:"16",color:black,space:"filled"},h7={piece:bP,moved:false,index:"17",color:black,space:"filled"}],
 
 [a6={piece:wS,moved:false,index:"20",color:white,space:"empty"},b6={piece:bS,moved:false,index:"21",color:black,space:"empty"},c6={piece:wS,moved:false,index:"22",color:white,space:"empty"},d6={piece:bS,moved:false,index:"23",color:black,space:"empty"},e6={piece:wS,moved:false,index:"24",color:white,space:"empty"},f6={piece:bS,moved:false,index:"25",color:black,space:"empty"},g6={piece:wS,moved:false,index:"26",color:white,space:"empty"},h6={piece:bS,moved:false,index:"27",color:black,space:"empty"}],
 
@@ -112,7 +98,7 @@ let board = [
 
 [a3={piece:bS,moved:false,index:"50",color:black,space:"empty"},b3={piece:wS,moved:false,index:"51",color:white,space:"empty"},c3={piece:bS,moved:false,index:"52",color:black,space:"empty"},d3={piece:wS,moved:false,index:"53",color:white,space:"empty"},e3={piece:bS,moved:false,index:"54",color:black,space:"empty"},f3={piece:wS,moved:false,index:"55",color:white,space:"empty"},g3={piece:bS,moved:false,index:"56",color:black,space:"empty"},h3={piece:wS,moved:false,index:"57",color:white,space:"empty"}],
 
-[a2={piece:wPawn1,moved:false,index:"60",color:white,space:"filled"},b2={piece:wPawn2,moved:false,index:"61",color:white,space:"filled"},c2={piece:wPawn3,moved:false,index:"62",color:white,space:"filled"},d2={piece:wPawn4,moved:false,index:"63",color:white,space:"filled"},e2={piece:wPawn5,moved:false,index:"64",color:white,space:"filled"},f2={piece:wPawn6,moved:false,index:"65",color:white,space:"filled"},g2={piece:wPawn7,moved:false,index:"66",color:white,space:"filled"},h2={piece:wPawn8,moved:false,index:"67",color:white,space:"filled"}],
+[a2={piece:wP,moved:false,index:"60",color:white,space:"filled"},b2={piece:wP,moved:false,index:"61",color:white,space:"filled"},c2={piece:wP,moved:false,index:"62",color:white,space:"filled"},d2={piece:wP,moved:false,index:"63",color:white,space:"filled"},e2={piece:wP,moved:false,index:"64",color:white,space:"filled"},f2={piece:wP,moved:false,index:"65",color:white,space:"filled"},g2={piece:wP,moved:false,index:"66",color:white,space:"filled"},h2={piece:wP,moved:false,index:"67",color:white,space:"filled"}],
 
 [a1={piece:wR,moved:false,index:"70",color:white,space:"filled"},b1={piece:wN,moved:false,index:"71",color:white,space:"filled"},c1={piece:wB,moved:false,index:"72",color:white,space:"filled"},d1={piece:wQ,moved:false,index:"73",color:white,space:"filled"},e1={piece:wK,moved:false,index:"74",color:white,space:"filled"},f1={piece:wB,moved:false,index:"75",color:white,space:"filled"},g1={piece:wN,moved:false,index:"76",color:white,space:"filled"},h1={piece:wR,moved:false,index:"77",color:white,space:"filled"}]
 ]
@@ -250,26 +236,86 @@ function bSorwS (position){
 //this one grabs the array of available moves, and checks if you want to move there
 function findValidity (array,p2){
 
-let target = p2.index;
 
- console.log(array)
 
+
+  console.log(array)
+  console.log(" ^dev tools^ ")
+
+
+ let specialMoveCharacter = chessPositionToIndexNotation(globalPosition2) + globalPosition2[2];
+ let target = p2.index;
+
+
+
+//valid NormalMoves
     function approvedMoveInArray (item){
-  return (item == target)
+      return (item == target)
   }
+  
+//valid Special Moves (return items over length of 3 & equals to position2)
+  function approvedSpecialMoveInArray (item){
 
-  let validQuestionMark = array.some(approvedMoveInArray);
+    return (item.length == 3 & item == specialMoveCharacter )
+    }
+
+
+
+
+
+
+
+
+
+
+
+  let validMove = array.some(approvedMoveInArray);
+  let validSpecialmove = array.some(approvedSpecialMoveInArray);
+
+
 
   let valid = "Invalid Move"
 
-if (validQuestionMark == true){
-  valid = "Valid Move"
-} else {
-  valid = "Invalid Move"
+
+  if (validSpecialmove == true){
+
+
+    
+//Make special moves are for right color
+
+  specialvalidPlayerAndColor = sameColorPlayerAndPiece(globalPlayer,globalPosition1)  
+
+
+//if player moves right color, then relay to Piece Logic Switch
+  if (specialvalidPlayerAndColor = "White player moves White Piece"){
+
+     valid = "White Valid Special Move"
+
+
+  } else if (specialvalidPlayerAndColor = "Black player moves Black Piece"){
+
+    valid = "Black Valid Special Move"
+
+  } 
+
+
+  //if promotion logic
+
+
+
+
+
+
+  } else if (validMove == true) {
+
+//run basic swap
+
+ valid = "Valid Move Basic Swap";
+
 }
 
-
 return valid
+
 }
 
 
@@ -367,6 +413,137 @@ function blackpromoTime (parameter){
 
 
 
+  function leftWhiteCastle () {
+
+//white king e1 to c1 aka [7][2]
+board[7][2].piece = board[7][4].piece;
+
+//white rook a1 to d1 aka [7][3]
+board[7][3].piece = board[7][0].piece
+
+//replace a1 & e1 with empty square
+
+bSorwS("a1")
+bSorwS("e1")
+
+//reset: space, moved & color
+board[7][0].space = "empty";
+board[7][4].space = "empty";
+board[7][0].moved = false;
+board[7][4].moved = false;
+board[7][0].color = black;
+board[7][4].color = black;
+
+
+return "You have Left Castled"
+}
+
+
+
+  function rightWhiteCastle (){
+
+//white king e1 to g1 aka [7][6]
+board[7][6].piece = board[7][4].piece;
+
+//white rook h1 to f1 aka [7][5]
+board[7][5].piece = board[7][7].piece
+
+//replace h1 & e1 with empty square
+
+bSorwS("h1")
+bSorwS("e1")
+
+//reset: space, moved & color
+board[7][7].space = "empty";
+board[7][4].space = "empty";
+board[7][7].moved = false;
+board[7][4].moved = false;
+board[7][7].color = black;
+board[7][4].color = black;
+
+
+
+
+  }
+
+  function leftBlackCastle (){
+
+
+
+
+  }
+
+  function rightBlackCastle (){
+
+
+
+
+  }
+
+
+  function castleSwitch (castle){
+
+let c1 = castle[0] + castle[1];
+
+
+    switch(c1) {  
+
+      case "a1": 
+        leftWhiteCastle();
+        break;
+      case "h1": 
+        rightWhiteCastle();
+        break;
+      case "a8": 
+        
+        break;
+      case "h8": 
+        
+        break;
+    }
+    return ;
+}
+
+
+
+
+
+
+//make sure right Player moves right Color
+function sameColorPlayerAndPiece (player,position1){
+
+  let p1IN = chessPositionToIndexNotation(position1)
+  let p1Object = board[p1IN[0]][p1IN[1]];
+
+
+
+
+  if (player == "white"){
+  
+    if (p1Object.color == "white"){
+  
+      return "White player moves White Piece"
+  
+  } else {
+    console.log("White needs to move white Piece")
+  }
+  
+  } else {
+  
+    if (p1Object.color == "black"){
+  
+    return "Black player moves Black Piece"
+  
+  } else {
+    console.log("Black needs to move Black Piece")
+  }
+  
+  }
+
+
+}
+
+
 
 
 
@@ -458,6 +635,53 @@ function blackPieceLogicSwitch (p1,p2){
 
 }
 
+function whiteSpecialMovesSwitch (){
+
+  letter = globalPosition2
+
+  switch(globalPosition2[2]) {    
+    case "C": 
+      castleSwitch(globalPosition2);
+      break;
+    case "N": 
+      whitepromotionSwitch(globalPosition2[2]);
+      break;
+    case "Q": 
+      whitepromotionSwitch(globalPosition2[2]);
+      break;
+    case "B": 
+      whitepromotionSwitch(globalPosition2[2]);
+      break;
+    case "R":
+      whitepromotionSwitch(globalPosition2[2]);
+      break;
+  }
+  return ;
+}
+
+function blackSpecialMovesSwitch (){
+
+letter = globalPosition2[2]
+
+  switch(letter) {    
+    case "C": 
+      castleSwitch(globalPosition2);
+      break;
+    case "N": 
+      blackpromotionSwitch(globalPosition2[2]);
+      break;
+    case "Q": 
+      blackpromotionSwitch(globalPosition2[2]);
+      break;
+    case "B": 
+      blackpromotionSwitch(globalPosition2[2]);
+      break;
+    case "R":
+      blackpromotionSwitch(globalPosition2[2]);
+      break;
+  }
+  return ;
+}
 
 
 
@@ -493,9 +717,11 @@ function whitePawnGameLogic (p1,p2){
 
     let possibleMoves = [];
 
+
+
+    //if havent moved, then can go forward 1 or 2 space
     if (p1.moved === false ){
 
-        //if havent moved, then can go forward 1 or 2 space
         for (let i = 1; i < 3; i++){
   
             if (board[p1.index[0] - i][p1.index[1]].space === "empty"){
@@ -534,7 +760,7 @@ function whitePawnGameLogic (p1,p2){
               if (board[p1.index[0] - 1][p1.index[1] - 1].space === "empty" ){
 
                 possibleMoves.push(board[p1.index[0] - 1][p1.index[1] - 1].index);
-                console.log("left attack is running")
+
                 
               } else{
 
@@ -552,7 +778,7 @@ function whitePawnGameLogic (p1,p2){
                 if (board[p1.index[0] - 1][p1.index[1] +++ 1].space === "empty" ){
 
                   possibleMoves.push(board[p1.index[0] - 1][p1.index[1] +++ 1].index);
-                  console.log("right attack is running")
+
 
                 } else{
 
@@ -638,7 +864,6 @@ console.log("hasnt moved")
         if (board[p1.index[0] +++ 1][p1.index[1] - 1].space === "empty" ){
 
           possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1] - 1].index);
-          console.log("left attack is running")
           
         } else{
 
@@ -656,7 +881,7 @@ console.log("hasnt moved")
           if (board[p1.index[0] +++ 1][p1.index[1] +++ 1].space === "empty" ){
 
             possibleMoves.push(board[p1.index[0] +++ 1][p1.index[1] +++ 1].index);
-            console.log("right attack is running")
+
 
           } else{
 
@@ -681,6 +906,14 @@ let valid = findValidity(possibleMoves,p2);
 return valid;
 
 }
+
+
+
+
+
+
+
+
 
 //logic function for white rook (need castle with king logic)
 function whiteRookGameLogic(p1,p2){
@@ -783,6 +1016,12 @@ let valid = findValidity(possibleMoves,p2);
 return valid
 
 }
+
+
+
+
+
+
 
 //logic function for black rook (need castle with king logic)
 function blackRookGameLogic(p1,p2){
@@ -1454,7 +1693,6 @@ function blackBishopGameLogic(p1,p2){
 
 }
 
-
 //logic function for White Queen
 function whiteQueenGameLogic(p1,p2){
 
@@ -1841,7 +2079,6 @@ function blackQueenGameLogic(p1,p2){
 
 }
 
-
 //logic function for White King (except for castle)
 function whiteKingGameLogic(p1,p2){
 
@@ -1942,7 +2179,6 @@ if (p1.index[0] +++ i < 8 & p1.index[1] +++ i < 8 ){
 
 //Vertical & Horizontal Directions
 
-
   //directly above moves (only by 1)
 
   if (p1.index[0] - 1 != -1){
@@ -2013,6 +2249,35 @@ if (board[p1.index[0]][p1.index[1] - 1].space === "empty"){
   }
 
 
+
+//king Casling Logic left
+
+if (board[p1.index[0]][p1.index[1]].moved === false & board[7][0].moved === false ){
+
+
+if (board[7][1].space === "empty" & board[7][2].space === "empty"){
+
+  if (board[7][3].space === "empty") {
+
+     possibleMoves.push(board[7][0].index + "C");
+
+  }
+}
+}
+
+//king Casling Logic right
+
+if (board[p1.index[0]][p1.index[1]].moved === false & board[7][7].moved === false ){
+
+  
+  if (board[7][6].space === "empty" & board[7][5].space === "empty"){
+  
+  
+       possibleMoves.push(board[7][7].index + "C");
+  
+    
+  }
+  }
 
 
 
@@ -2236,6 +2501,7 @@ return valid
   //organize/clean/refine code
     //-rook code is ugly
     //-queen uses exact same bishop code, could reuse functions
+    //make only 1 bPawn & wPawn
 
   //buid a cool front end
   //put it on a blockchain
@@ -2254,47 +2520,41 @@ function movePiece (player,position1,position2){
 
 
 //which piece and where you want to move?
-let p1IN = chessPositionToIndexNotation(position1)
-let p2IN = chessPositionToIndexNotation(position2)
-let p1Object = board[p1IN[0]][p1IN[1]];
-let p2Object = board[p2IN[0]][p2IN[1]];
+  let p1IN = chessPositionToIndexNotation(position1)
+  let p2IN = chessPositionToIndexNotation(position2)
+  let p1Object = board[p1IN[0]][p1IN[1]];
+  let p2Object = board[p2IN[0]][p2IN[1]];
 
-
-promotion = position2[2];
-
-
-
-
-//can they move?
+  globalPosition1 = position1;
+  globalPosition2 = position2;
+  globalPlayer = p1Object.color
 
 
 
+//Make Sure Right Player moves right Color
 
-let move = "Invalid Move";
+let movePiece = "Invalid Move";
+validPlayerAndColor = sameColorPlayerAndPiece(player,position1)  
 
-//this If else Statements make sure White Player only move white Piece, if true relays to whitepieceSwitcher, to whitepiecesLogic and pass "Valid Move"
 
-if (player == "white"){
 
-  if (p1Object.color == "white"){
 
-  move = whitePieceLogicSwitch(p1Object,p2Object)
 
-} else {
-  console.log("White needs to move white Piece")
-}
 
-} else {
+//if player moves right color, then relay to Piece Logic Switch
+  if (validPlayerAndColor = "White player moves White Piece"){
 
-  if (p1Object.color == "black"){
+    movePiece = whitePieceLogicSwitch(p1Object,p2Object)
 
-  move = blackPieceLogicSwitch(p1Object,p2Object)
+  } else if (validPlayerAndColor = "Black player moves Black Piece"){
 
-} else {
-  console.log("Black needs to move Black Piece")
-}
+    movePiece = blackPieceLogicSwitch(p1Object,p2Object)
 
-}
+  }
+
+
+
+
 
 
 
@@ -2302,52 +2562,45 @@ if (player == "white"){
 //if position1 to position2 is = "valid Move", then run this code
   //lets move that piece to position2, and fill empty square of position1
 
-  if ( move == "Invalid Move") {
+  if ( movePiece == "Valid Move Basic Swap") {
 
-  console.log("your Move is Invalid")
+    //all Swap logic for basic moves
+
+    console.log("your Move is Valid")
+    let tempPiece = board[p1IN[0]][p1IN[1]].piece
+    board[p2IN[0]][p2IN[1]].piece = tempPiece
+    bSorwS(position1) 
+    p1Object.space = "empty"
+    p2Object.moved = "true"
+    p2Object.space = "filled"
+    p2Object.color = p1Object.color
+
+
 
   } else {
   
-  let tempPiece = board[p1IN[0]][p1IN[1]].piece
-  board[p2IN[0]][p2IN[1]].piece = tempPiece
-  bSorwS(position1) 
-  p1Object.space = "empty"
-  p2Object.moved = "true"
-  p2Object.space = "filled"
-  p2Object.color = p1Object.color
 
 
 
-  //if p2[2] = Q then set piece to Q
+  //if move piece
+  if (movePiece == "White Valid Special Move"){
 
-    if (position2.length = 3){
+    whiteSpecialMovesSwitch()
+    console.log("Valid Move")
+  } else{
+  console.log("Invalid move")
+  }
 
-    let prom = position2[2]
-    let setterPromotion = "N/A";
+  if (movePiece == "Black Valid Special Move"){
+
+    blackSpecialMovesSwitch()
+    console.log("Valid Move")
+  } else{
+    console.log("Invalid move")
+  }
 
 
-    if (player == "white"){
-
-    setterPromotion = whitepromoTime(prom)
-
-    } else {
-
-    setterPromotion = blackpromoTime(prom)
-
-    }
-
-    if (setterPromotion != ""){
-
-      p2Object.piece = setterPromotion;
-      
-    } else {
-      console.log(" ")
-      console.log("please pick a piece")
-
-    }
     
-
-    }
 
 
 
@@ -2355,17 +2608,14 @@ if (player == "white"){
 
   }
 
+
+
 return displayGame() + "result for that move"
 
 }
 
 
 //your move
-movePiece("black","b2","b1R")
-
-
-
-
-
+movePiece("white","a2","a5")
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
