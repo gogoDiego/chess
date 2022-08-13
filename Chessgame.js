@@ -17,9 +17,6 @@
 */
 
 
-
-
-
 //1.
 //white pieces
 let wK = ("♔")
@@ -143,38 +140,11 @@ console.log(displayGame())
 
 
 
-let turncount = 0;
-let playersTurn = "white"
 
-function gameTurn () {
-
-
-  turncount = turncount + 1;
-  
-  const turnStatement = ": its Currently "
-  const turn = "turn #"
-  
-    if (turncount % 2 == true){
-  
-      playersTurn = "white";
-  
-    } else {
-  
-      playersTurn = "black";
-  
-    }
-  
-  return (turn + turncount + turnStatement + playersTurn + " turn")
-  
-  }
-
-  console.log(gameTurn())
-
-   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
-//just empty space lol
 
 
 
@@ -330,12 +300,12 @@ function findValidity (array,p2){
 //if player moves right color, then relay to Piece Logic Switch
   if (specialvalidPlayerAndColor = "White player moves White Piece"){
 
-     valid = "White Valid Special Move"
+     valid = "Valid White Special Move"
     
 
   } else if (specialvalidPlayerAndColor = "Black player moves Black Piece"){
 
-    valid = "Black Valid Special Move"
+    valid = "Valid Black Special Move"
 
     
 
@@ -461,7 +431,7 @@ function blackpromoTime (parameter){
 
   function leftWhiteCastle () {
 
-console.log("dog")
+
 
 
 //white king e1 to c1 aka [7][2]
@@ -668,20 +638,20 @@ function sameColorPlayerAndPiece (player,position1){
   
     if (p1Object.color == "white"){
   
-      return "White player moves White Piece"
+      return "Valid"
   
   } else {
-    console.log("White needs to move white Piece")
+    console.log("White Player can only move white Pieces")
   }
   
   } else {
   
     if (p1Object.color == "black"){
   
-    return "Black player moves Black Piece"
+    return "Valid"
   
   } else {
-    console.log("Black needs to move Black Piece")
+    console.log("Black Player can only move black Pieces")
   }
   
   }
@@ -716,7 +686,7 @@ function sameColorPlayerAndPiece (player,position1){
 //game Logic Switch for the White/Black Pieces
 
 
-function whitePieceLogicSwitch (p1,p2){
+function pieceLogicSwitch (p1,p2){
 
   let answer = "unregistered logic"
 
@@ -743,22 +713,10 @@ function whitePieceLogicSwitch (p1,p2){
       case "♕":  
         answer = [whiteQueenGameLogic(p1,p2)];
         break;
-    }
-    return answer;
-
-}
-
-
-function blackPieceLogicSwitch (p1,p2){
-
-  let answer = "unregistered logic"
-
-    switch(p1.piece) {    
-
       case "▮":
         answer = ["Invalid Move"];
         break;
-        case "♟": 
+      case "♟": 
         answer = [blackPawnGameLogic(p1,p2)];
         break;
       case "♜": 
@@ -776,10 +734,13 @@ function blackPieceLogicSwitch (p1,p2){
       case "♛":  
         answer = [blackQueenGameLogic(p1,p2)];
         break;
+
     }
     return answer;
 
 }
+
+
 
 function whiteSpecialMovesSwitch (){
 
@@ -809,10 +770,6 @@ function blackSpecialMovesSwitch (){
 
 letter = globalPosition2[2]
 
-
-
-
-
   switch(letter) {    
     case "C": 
       castleSwitch(globalPosition2);
@@ -834,6 +791,45 @@ letter = globalPosition2[2]
 }
 
 
+
+function pieceToName (position){
+
+  let answer = "Unknown Name"
+
+    switch(position) {  
+
+      case "▯": 
+      case "▮":
+        answer = "Space"
+        break;
+        case "♙": 
+        case "♟": 
+        answer = "Pawn"
+        break;
+      case "♖": 
+      case "♜":  
+        answer = "Rook"
+        break;
+      case "♘":  
+      case "♞": 
+        answer = "Knight"
+        break;
+      case "♗": 
+      case "♝": 
+        answer = "Bishop"
+        break;
+      case "♔":  
+      case "♚": 
+        answer = "Queen"
+        break;
+      case "♕": 
+      case "♛": 
+        answer = "King"
+        break;
+    }
+    return answer;
+
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -953,18 +949,12 @@ function whitePawnGameLogic (p1,p2){
 //logic functions for the BLACK Pawn (*still needs promotion logic)
 function blackPawnGameLogic (p1,p2) {
 
-console.log("black pawn game logic is runnning")
-
-
 let possibleMoves = [];
 
 
-
-console.log(p1.moved)
-
 if (p1.moved === false ){
 
-console.log("hasnt moved")
+
 
   //if havent moved, then can go forward 1 or 2 space
   for (let i = 1; i < 3; i++){
@@ -1056,12 +1046,6 @@ let valid = findValidity(possibleMoves,p2);
 return valid;
 
 }
-
-
-
-
-
-
 
 
 
@@ -1204,10 +1188,6 @@ let valid = findValidity(possibleMoves,p2);
 return valid
 
 }
-
-
-
-
 
 
 
@@ -2754,6 +2734,7 @@ return valid
   //organize/clean/refine code
     //-queen uses exact same bishop/rook code, could reuse functions
     //fix valid move/invalid move results
+    //can we put all game logic in 1 switch instead of a black and white one
 
   //buid a cool front end
   //put it on a blockchain
@@ -2768,6 +2749,9 @@ return valid
 //goal is to make a function (position1, position2)
 
 
+
+
+
 function movePiece (player,position1,position2){
 
  
@@ -2777,44 +2761,36 @@ function movePiece (player,position1,position2){
   let p2IN = chessPositionToIndexNotation(position2)
   let p1Object = board[p1IN[0]][p1IN[1]];
   let p2Object = board[p2IN[0]][p2IN[1]];
+  let p1 = board[p1IN[0]][p1IN[1]];
+  let p2 = board[p2IN[0]][p2IN[1]];
 
+
+
+  
+  globalp1object = board[p1IN[0]][p1IN[1]];
+  globalp2object = board[p2IN[0]][p2IN[1]];
   globalPosition1 = position1;
   globalPosition2 = position2;
-  globalPlayer = p1Object.color
+  globalPlayer = p1Object.color;
+
+  let Gp1object = globalp1object;
+
+  tempp1object = Gp1object;
+
+
 
 //Make Sure Right Player moves right Color
 
 let movePiece = "Invalid Move";
-validPlayerAndColor = sameColorPlayerAndPiece(player,position1)  
+
+validPlayerAndColor = sameColorPlayerAndPiece(player,position1) 
+
+movePiece = pieceLogicSwitch(p1,p2)
 
 
 
-
-
-//if player moves right color, then relay to Piece Logic Switch
-  if (validPlayerAndColor == "White player moves White Piece"){
-
-    movePiece = whitePieceLogicSwitch(p1Object,p2Object)
-    
-
-
-  } else if (validPlayerAndColor == "Black player moves Black Piece"){
-
-    
-   
-    movePiece = blackPieceLogicSwitch(p1Object,p2Object)
-
-  }
-
-
-
-
-
-
-
-
-//if position1 to position2 is = "valid Move", then run this code
-  //lets move that piece to position2, and fill empty square of position1
+//valid moves, run this swap and return "move is valid statements"
+if (movePiece[0].slice(0,5) == 'Valid' & validPlayerAndColor == "Valid"){
 
   if ( movePiece == "Valid Move Basic Swap") {
 
@@ -2829,39 +2805,44 @@ validPlayerAndColor = sameColorPlayerAndPiece(player,position1)
     p2Object.space = "filled"
     p2Object.color = p1Object.color
 
-
-
-  } else {
-  
+  } 
   //if move piece
-  if (movePiece == "White Valid Special Move"){
+  if (movePiece == "Valid White Special Move"){
 
     whiteSpecialMovesSwitch()
     console.log("Valid Move")
 
   } 
 
-
-
-  if (movePiece == "Black Valid Special Move"){
+  if (movePiece == "Valid Black Special Move"){
 
     blackSpecialMovesSwitch()
     console.log("Valid Move")
 
   }
 
+  
+//for Invalid moves, dont move anything, and return appropriate errors
+} else if (movePiece == "Invalid Move" ){
 
-    
-
-
-console.log("invalid move")
-
-
-  }
-
+console.log("your Move is Invalid");
+console.log(" ")
+ 
 
 
 
+
+
+}
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -2877,7 +2858,77 @@ movePiece("white","a2","a4")
 
 
 
-//short TO do list
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/*
+let turncount = 0;
+let playersturn = "white"
+let whiteplayer = "player 1";
+let blackplayer = "player 2";
+let chessLog = [];
+
+function gameTurn () {
+
+  return turncount += 1;
+  
+  }
+
+
+function whichplayersturn (turncount){
+
+if (turncount % 2 == 1){
+  return playersturn = "white";
+} else if (turncount % 2 == 0){
+return playersturn = "black";
+}
+
+}
+
+function whitePlayersName (name){
+  return whiteplayer = name;
+}
+
+function blackPlayersName (name){
+  return blackplayer = name;
+}
+
+
+//turn
+console.log(gameTurn())
+//which players turn
+console.log(whichplayersturn(turncount))
+
+//black and white players name
+console.log(whitePlayersName("diego"))
+console.log(blackPlayersName("bob"))
+
+
+
+function combiner (){
+
+let first = "#" + turncount + " ";
+let second = whichplayersturn(turncount) + " player"
+let third = " (" + whiteplayer + ") ";
+let forth = globalPosition1 + " " + tempp1object.piece + " " + pieceToName(globalp1object.piece)
+// let fifth = INSERT LOGIC FOR ACTION (LIKE attack = "attacked", moved = "moved to" );
+let fifth = " moved to "
+let sixth = globalPosition2 + " " + globalp2object.piece + " " + pieceToName(globalp2object.piece)
+
+let total = first + second + third + forth + fifth + sixth;
+
+ return total;
+}
+
+console.log(combiner())
+
+
+    //Readable Chess Log
+  //[color]:[move number][position1 lowercase letter & Number][piece & name][action] [position2 lowercase letter & Number][piece & name]
+  //example: #1 White Player (gogoDiego) a2 ♙ Pawn moved to a3 ▮ Space
+
+  */
