@@ -143,6 +143,32 @@ console.log(displayGame())
 
 
 
+let turncount = 0;
+let playersTurn = "white"
+
+function gameTurn () {
+
+
+  turncount = turncount + 1;
+  
+  const turnStatement = ": its Currently "
+  const turn = "turn #"
+  
+    if (turncount % 2 == true){
+  
+      playersTurn = "white";
+  
+    } else {
+  
+      playersTurn = "black";
+  
+    }
+  
+  return (turn + turncount + turnStatement + playersTurn + " turn")
+  
+  }
+
+  console.log(gameTurn())
 
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -264,16 +290,18 @@ function findValidity (array,p2){
 
       return true
 
-    } else if (item === Rookright || item === Rookleft ){
-
-      return true
+    } else if (Rookright = "undefined" || Rookleft == "undefined"){
       
-    } 
-
-    return
+    } else if (item === Rookright || item === Rookleft ){
+      
+      return true
     }
 
+    return
+    
+    }
 
+ 
 
 
 
@@ -575,13 +603,13 @@ let c1 = castle[0] + castle[1];
 
 function whichRookCastle (){
  
-console.log(globalPosition2)
-console.log(Rookleft)
+
 
 
 if (globalPosition2 === "e8C" ){
 
-  
+
+
   if (Rookleft === "04Ca" & globalPosition1 === "a8"){
 
    
@@ -1281,19 +1309,12 @@ possibleMoves.push(board[rookIndex1][(p1.index[1])].index);
 
 
 
-
-
 //king Casling Logic left
 
 if (board[p1.index[0]][p1.index[0]].moved === false & board[0][4].moved === false ){
 
-
-
-
   if (board[0][1].space === "empty" & board[0][2].space === "empty"){
   
-
-
     if (board[0][3].space === "empty") {
 
        possibleMoves.push(board[0][4].index + "Ca");
@@ -1304,6 +1325,7 @@ if (board[p1.index[0]][p1.index[0]].moved === false & board[0][4].moved === fals
   }
   
   //king Casling Logic right
+
 
 
 
@@ -1318,6 +1340,9 @@ if (board[p1.index[0]][p1.index[0]].moved === false & board[0][4].moved === fals
     }
   }
 
+
+
+  
 
 
 let valid = findValidity(possibleMoves,p2);
@@ -2708,12 +2733,18 @@ return valid
 }
 
 
+//en passant Psuedo Code
+  //get log of last past move
+    //(if last move is enemy pawn moved 2 squares then add diagonal attack to possible moves)
+
+
 
 
 
 
 //To Do List
   //en passant special move
+
   //-make a Check and CheckMate
   //-make a turns system
   //-make a game log like white moved wK (b1) to (b3)
@@ -2721,9 +2752,8 @@ return valid
   //-label the X and Y axis of board
   //-add more complex errors like King is in check, move other piece
   //organize/clean/refine code
-    //-rook code is ugly
-    //-queen uses exact same bishop code, could reuse functions
-    //make only 1 bPawn & wPawn
+    //-queen uses exact same bishop/rook code, could reuse functions
+    //fix valid move/invalid move results
 
   //buid a cool front end
   //put it on a blockchain
@@ -2751,8 +2781,6 @@ function movePiece (player,position1,position2){
   globalPosition1 = position1;
   globalPosition2 = position2;
   globalPlayer = p1Object.color
-
-
 
 //Make Sure Right Player moves right Color
 
@@ -2833,12 +2861,23 @@ console.log("invalid move")
 
 
 
+
+
+
+
+
+
 return displayGame() + "result for that move"
 
 }
 
 
 //your move
-movePiece("white","h1","e1C")
+movePiece("white","a2","a4")
+
+
+
+//short TO do list
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
